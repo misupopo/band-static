@@ -298,7 +298,7 @@ export class BubbleMapComponent implements OnDestroy {
                         'code': 'BA',
                         'name': 'Bosnia and Herzegovina',
                         'value': 3752228,
-                        'color': this.getRandomGeoColor()
+                        'color': this.getRandomGeoColor(),
                     },
                     {'code': 'BW', 'name': 'Botswana', 'value': 2030738, 'color': this.getRandomGeoColor()},
                     {'code': 'BR', 'name': 'Brazil', 'value': 196655014, 'color': this.getRandomGeoColor()},
