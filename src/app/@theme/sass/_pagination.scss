@@ -1,0 +1,66 @@
+@import '../../@theme/sass/conf/conf';
+
+.ngx-pagination {
+    margin-bottom: 11px;
+    text-align: center;
+
+    ul {
+        display: inline-block;
+    }
+
+    li {
+        span {
+            padding: 6px 12px;
+            margin: 0 4px;
+            border: 1px solid #6394dc !important;
+            color: #6394dc;
+            font-size: 1.5rem;
+            border-radius: 2px;
+        }
+    }
+
+    .pagination-previous,
+    .pagination-next {
+        a {
+            color: #6394dc;
+        }
+
+        > span {
+            border: none !important;
+
+            > span {
+                border: none !important;
+            }
+        }
+
+        &.disabled {
+            span {
+                color: $border-color !important;
+                border-color: $border-color !important;
+            }
+        }
+    }
+
+    .current {
+        background: none !important;
+
+        span {
+            color: $border-color !important;
+            border-color: $border-color !important;
+        }
+    }
+
+    a {
+        &:hover {
+            background: none !important;
+        }
+    }
+}
+
+.pagingBox_active {
+    a {
+        color: $border-color !important;
+        border-color: $border-color !important;
+    }
+}
+

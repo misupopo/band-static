@@ -1,0 +1,96 @@
+@import '../../../../@theme/sass/conf/conf';
+
+.nav-tabs {
+    margin-bottom: 24px;
+}
+
+.discographyBox_listBox_list {
+    margin-left: 0 !important;
+    margin-bottom: 20px;
+    padding: 10px 0 10px 10px !important;
+    border: none !important;
+}
+
+.discographyBox_listBox_image {
+    margin-bottom: 15px;
+
+    img {
+        width: 153px;
+    }
+}
+
+.discographyBox_listBox_title {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    color: $default-font-color;
+}
+
+.discographyBox_listBox_date {
+    font-size: 1.0rem;
+    color: $default-font-color;
+}
+
+.notice-list_icon {
+    left: 0;
+}
+
+.discographyDetailBox_dateBox_date {
+    //margin-left: 35px;
+    margin-left: 6px;
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.discographyDetailBox_title {
+    margin-bottom: 17px;
+}
+
+.discographyDetailBox_wrap {
+}
+
+.discographyDetailBox_contentBox_image {
+    box-sizing: border-box;
+    padding-right: 14px;
+    float: left;
+    width: 25%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.discographyDetailBox_contentBox_songListBox {
+    float: left;
+    width: 75%;
+}
+
+.discographyDetailBox_contentBox_songListBox_productNumber {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.discographyDetailBox_contentBox_songListBox_price {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.discographyDetailBox_contentBox_songListBox_discNumber {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    color: #6394dc;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #6394dc;
+
+    span {
+        padding-left: 6px;
+    }
+}
+
+.discographyDetailBox_contentBox_songListBox_listBox {
+    font-size: 1.2rem;
+
+    li {
+        line-height: 2.5rem;
+    }
+}

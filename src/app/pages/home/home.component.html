@@ -1,0 +1,50 @@
+<orb-card title="News">
+    <div class="homeBox notice">
+        <ul>
+            <li *ngFor="let newsList of newsListData; let newsListIndex = index"
+                class="notice-list">
+                <span
+                   *ngIf="newsListIndex < 5">
+                    <div class="notice-list_date">{{newsList.date | date: 'yyyy/MM/dd'}}</div>
+                    <div class="notice-list_sentence"
+                         [ngClass]="{'notice-list_sentence-icon': newsList.news_type === 'release'}"
+                         [ngSwitch]="newsList.news_type">
+                        <div *ngSwitchCase="'release'">
+                            <a href="/#/pages/discography/detail/{{newsList._id}}">
+                                <span class="notice-list_icon notice-list_icon-{{newsList.type | lowercase}}">{{newsList.type | uppercase}}</span>
+                                <span class="notice-list_text notice-list_iconText">{{newsList.article_title}}</span>
+                            </a>
+                        </div>
+                        <div *ngSwitchCase="'live'">
+                            <a href="/#/pages/live/detail/{{newsList._id}}">
+                                <span class="notice-list_text">{{newsList.article_title}}</span>
+                            </a>
+                        </div>
+                    </div>
+                </span>
+            </li>
+        </ul>
+        <div class="more pt-10">
+            <a href="/#/pages/news">More</a>
+        </div>
+    </div>
+</orb-card>
+<orb-card title="Live">
+    <div class="notice">
+        <ul>
+            <li *ngFor="let liveList of liveListData; let liveListIndex = index"
+                class="notice-list">
+                <a href="/#/pages/live/detail/{{liveList._id}}"
+                   *ngIf="liveListIndex < 5">
+                    <div class="notice-list_date">{{liveList.date | date: 'yyyy/MM/dd'}}</div>
+                    <div class="notice-list_sentence">
+                        <span class="notice-list_text">{{liveList.title}}</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="more pt-10">
+            <a href="/#/pages/live">More</a>
+        </div>
+    </div>
+</orb-card>

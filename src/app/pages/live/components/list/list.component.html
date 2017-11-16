@@ -1,0 +1,26 @@
+<orb-card title="Live">
+    <div class="newsBox clearfix">
+        <div *ngFor="let liveList of liveListData | paginate: { itemsPerPage: 10, currentPage: currentNumber };"
+             class="newsBox_list">
+            <div class="newsBox_meta">{{liveList.date | date: 'yyyy/MM/dd'}}</div>
+            <div class="newsBox_contents">
+                <div class="newsBox-contents_title">{{liveList.article_title}}</div>
+                <div class="newsBox-contents_detail">
+                    <div class="newsBox-contents_detail_article" [innerHTML]="liveList.article_content">
+                    </div>
+                    <br />
+                    会場 : {{liveList.venue}}<br />
+                    開場 : {{liveList.enter_time | date: 'HH:mm'}}<br />
+                    開演 : {{liveList.start_time | date: 'HH:mm'}}<br />
+                    出演 : {{liveList.performer}}<br />
+                </div>
+            </div>
+            <div class="more">
+                <a href="/#/pages/live/detail/{{liveList._id}}">Detail</a>
+            </div>
+        </div>
+    </div>
+
+    <pagination-controls (pageChange)="currentNumber = $event"></pagination-controls>
+</orb-card>
+

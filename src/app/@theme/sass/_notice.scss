@@ -1,0 +1,44 @@
+@import '../../@theme/sass/conf/conf';
+
+.notice-list {
+    margin-bottom: 14px;
+
+    a {
+        color: $default-font-color;
+    }
+
+    .notice-list_date, .notice-list_sentence {
+        display: inline-block;
+    }
+}
+
+.notice-list_sentence {
+    position: relative;
+}
+
+.notice-list_icon {
+    color: #fff;
+    display: inline-block;
+    padding: 4px 8px 3px;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.notice-list_icon-single {
+    background: $cd-color;
+}
+
+.notice-list_icon-mv {
+    background: $mv-color;
+}
+
+.notice-list_text {
+    margin-left: 14px;
+}
+
+.notice {
+    .notice-list:last-child {
+        margin-bottom: 0;
+    }
+}

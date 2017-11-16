@@ -1,0 +1,28 @@
+@import '../../@theme/sass/conf/conf';
+
+html, body {
+    min-height: 100%;
+    //height: 100%;
+    font-size: 1.4rem;
+    background: rgb(3,4,5);
+    background: -moz-linear-gradient(top, rgba(3,4,5,1) 0%, rgb(30, 35, 71) 100%);
+    background: -webkit-linear-gradient(top, rgba(3,4,5,1) 0%,rgba(12,31,71,1) 100%);
+    background: linear-gradient(to bottom, rgba(3,4,5,1) 0%,rgba(12,31,71,1) 100%);
+    font-family: "游明朝",YuMincho,"ヒラギノ明朝 ProN W3","Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝","Sawarabi Mincho",serif;
+}
+
+body {
+    color: #fff;
+    @include bg-image('back_star.png');
+    background-repeat: repeat;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.container {
+    margin: 70px auto 150px;
+    width: $content-width;
+    min-height: 670px;
+}

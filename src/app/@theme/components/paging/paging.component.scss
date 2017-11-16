@@ -1,0 +1,30 @@
+@import '../../../@theme/sass/conf/conf';
+
+.pagingBox {
+    margin-bottom: 11px;
+    text-align: center;
+
+    ul {
+        display: inline-block;
+    }
+
+    li {
+        float: left;
+
+        a {
+            padding: 6px 12px;
+            margin: 0 4px;
+            border: 1px solid #6394dc;
+            color: #6394dc;
+            font-size: 1.5rem;
+            border-radius: 2px;
+        }
+    }
+}
+
+.pagingBox_active {
+    a {
+        color: $border-color !important;
+        border-color: $border-color !important;
+    }
+}

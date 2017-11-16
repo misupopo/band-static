@@ -3,13 +3,6 @@
         "node_modules/codelyzer"
     ],
     "rules": {
-        "trailing-comma": [
-            true,
-            {
-                "multiline": "always",
-                "singleline": "never"
-            }
-        ],
         "arrow-return-shorthand": true,
         "callable-types": true,
         "class-name": true,
@@ -37,11 +30,23 @@
             140
         ],
         "member-access": false,
+        "member-ordering": [
+            true,
+            {
+                "order": [
+                    "static-field",
+                    "instance-field",
+                    "static-method",
+                    "instance-method"
+                ]
+            }
+        ],
         "no-arg": true,
+        "no-bitwise": true,
         "no-console": [
             true,
             "debug",
-            "log",
+            "info",
             "time",
             "timeEnd",
             "trace"
@@ -113,13 +118,13 @@
         "directive-selector": [
             true,
             "attribute",
-            "ngx",
+            "app",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "ngx",
+            "app",
             "kebab-case"
         ],
         "use-input-property-decorator": true,
@@ -131,8 +136,6 @@
         "use-pipe-transform-interface": true,
         "component-class-suffix": true,
         "directive-class-suffix": true,
-        "no-access-missing-member": true,
-        "templates-use-public": true,
         "invoke-injectable": true
     }
 }

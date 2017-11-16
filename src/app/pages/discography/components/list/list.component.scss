@@ -1,0 +1,32 @@
+@import '../../../../@theme/sass/conf/conf';
+
+.nav-tabs {
+    margin-bottom: 24px;
+}
+
+.discographyBox_listBox_list {
+    margin-left: 0 !important;
+    margin-bottom: 20px;
+    padding: 10px 0 10px 10px !important;
+    border: none !important;
+}
+
+.discographyBox_listBox_image {
+    margin-bottom: 15px;
+
+    img {
+        width: 153px;
+    }
+}
+
+.discographyBox_listBox_title {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    color: $default-font-color;
+}
+
+.discographyBox_listBox_date {
+    font-size: 1.0rem;
+    color: $default-font-color;
+}
+

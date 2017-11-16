@@ -1,0 +1,23 @@
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $default-theme-color;
+}
+
+p {
+    line-height: 24px;
+}
+
+html {
+    font-size: 62.5%;
+    -ms-text-size-adjust: 100%; /* 4 */
+    -webkit-text-size-adjust: 100%; /* 5 */
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}

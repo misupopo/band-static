@@ -1,0 +1,25 @@
+{
+    "menuItem": [
+        {
+            "title": "News",
+            "link": "/#/pages/news"
+        },
+        {
+            "title": "Live",
+            "link": "/#/pages/live"
+        },
+        {
+            "title": "Schedule"
+        },
+        {
+            "title": "Discography",
+            "link": "/#/pages/discography"
+        },
+        {
+            "title": "Biography"
+        },
+        {
+            "title": "Movie"
+        }
+    ]
+}

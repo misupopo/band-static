@@ -1,0 +1,38 @@
+<orb-card title="Discography">
+    <div class="discographyDetailBox" *ngIf="detailData">
+        <div class="discographyDetailBox_dateBox position-relative">
+            <span class="notice-list_icon notice-list_icon-{{detailData.disc_number[0] | lowercase}}">{{detailData.disc_number[0]}}</span>
+            <div class="discographyDetailBox_dateBox_date">{{detailData.date | date: 'yyyy/MM/dd'}}</div>
+        </div>
+        <div class="discographyDetailBox_wrap">
+            <div class="discographyDetailBox_title">
+                {{detailData.title}}
+            </div>
+            <div class="discographyDetailBox_contentBox clearfix">
+                <div class="discographyDetailBox_contentBox_image">
+                    <img src="{{imageRequestUrl}}/images/{{detailData.file_name}}">
+                </div>
+                <div class="discographyDetailBox_contentBox_songListBox">
+                    <div class="discographyDetailBox_contentBox_songListBox_wrap">
+                        <div class="discographyDetailBox_contentBox_songListBox_productNumber">{{detailData.product_number }}</div>
+                        <div class="discographyDetailBox_contentBox_songListBox_price">¥{{detailData.price_value }}</div>
+                        <div *ngFor="let detail of detailData.disc_number; let detailDataIndex = index">
+                            <div class="discographyDetailBox_contentBox_songListBox_discNumber">
+                                <span>Disc {{detailDataIndex + 1}}</span>
+                            </div>
+                            <ul *ngFor="let musicList of detailData.music_list[detailDataIndex]; let musicListIndex = index"
+                                class="discographyDetailBox_contentBox_songListBox_listBox">
+                                <li>
+                                    <span>{{musicListIndex + 1}}.</span>
+                                    <span>{{musicList}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</orb-card>
+

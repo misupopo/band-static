@@ -1,0 +1,55 @@
+<orb-card title="Discography">
+    <div>
+        <tabset class="tabBox clearfix"
+                (onSelect)="tabSelect($event)">
+            <tab title="ALL">
+                <div *ngFor="let releaseList of releaseListData;" class="discographyBox">
+                    <ul class="discographyBox_listBox">
+                        <li class="discographyBox_listBox_list">
+                            <a href="/#/pages/discography/detail/{{releaseList._id}}">
+                                <div class="discographyBox_listBox_image">
+                                    <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
+                                </div>
+                                <div class="discographyBox_listBox_title">{{releaseList.title}}</div>
+                                <div class="discographyBox_listBox_date">{{releaseList.date | date: 'yyyy/MM/dd'}}</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </tab>
+            <tab title="SINGLE">
+                <div *ngFor="let releaseList of releaseSingleData;" class="discographyBox">
+                    <ul class="discographyBox_listBox">
+                        <li class="discographyBox_listBox_list">
+                            <a href="/#/pages/discography/detail/{{releaseList._id}}">
+                                <div class="discographyBox_listBox_image">
+                                    <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
+                                </div>
+                                <div class="discographyBox_listBox_title">{{releaseList.title}}</div>
+                                <div class="discographyBox_listBox_date">{{releaseList.date | date: 'yyyy/MM/dd'}}</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </tab>
+            <tab title="MV">
+                <div *ngFor="let releaseList of releaseMvData;" class="discographyBox">
+                    <ul class="discographyBox_listBox">
+                        <li class="discographyBox_listBox_list">
+                            <a href="/#/pages/discography/detail/{{releaseList._id}}">
+                                <div class="discographyBox_listBox_image">
+                                    <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
+                                </div>
+                                <div class="discographyBox_listBox_title">{{releaseList.title}}</div>
+                                <div class="discographyBox_listBox_date">{{releaseList.date | date: 'yyyy/MM/dd'}}</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </tab>
+            <tab title="ALBUM">
+            </tab>
+        </tabset>
+    </div>
+</orb-card>
+

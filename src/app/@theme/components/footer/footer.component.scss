@@ -1,30 +1,60 @@
-@import '../../styles/themes';
-@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
-@import '~bootstrap/scss/mixins/breakpoints';
+@import '../../../@theme/sass/conf/conf';
 
-@include nb-install-component() {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.footer {
+    background: black;
+}
 
-    .socials {
-        font-size: 2rem;
+.footer_inner {
+    margin: auto;
+    width: $content-width;
+}
 
-        a {
-            padding: 0.4rem;
-            color: nb-theme(color-fg);
-            transition: color ease-out 0.1s;
+.footer_inner {
+    padding:  35px 0;
 
-            &:hover {
-                color: nb-theme(color-fg-heading);
-            }
-        }
+    h1 {
+        float: left;
     }
 
-    @include media-breakpoint-down(is) {
-        .socials {
-            font-size: 1.5rem;
-        }
+    a {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.8rem;
     }
+
+    nav {
+        margin-bottom: 17px;
+    }
+}
+
+.footer_menu {
+    display: inline-block;
+    margin-top: 5px;
+    float: right;
+
+    li {
+        float: left;
+        margin-left: 30px;
+    }
+}
+
+.footer_copyright {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer_inquiry {
+    a {
+        font-size: 1.2rem;
+    }
+
+    float: right;
+}
+
+.button-facebook, .button-twitter {
+    margin-top: -8px;
+}
+
+.button-twitter {
+    margin-left: 14px !important;
 }

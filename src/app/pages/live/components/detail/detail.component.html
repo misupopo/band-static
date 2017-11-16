@@ -1,0 +1,20 @@
+<orb-card title="Live">
+    <div class="newsBox clearfix">
+        <div class="newsBox_list">
+            <div class="newsBox_meta">{{detailData.date | date: 'yyyy/MM/dd'}}</div>
+            <div class="newsBox_contents">
+                <div class="newsBox-contents_title">{{detailData.article_title}}</div>
+                <div class="newsBox-contents_detail">
+                    会場 : {{detailData.venue}}<br />
+                    開場 : {{detailData.enter_time | date: 'HH:mm'}}<br />
+                    開演 : {{detailData.start_time | date: 'HH:mm'}}<br />
+                    出演 : {{detailData.performer}}<br />
+                    <br />
+                    <div class="newsBox-contents_detail_article" [innerHTML]="detailData.information">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</orb-card>
+

@@ -1,0 +1,89 @@
+
+.clearfix {
+    @include clearfix();
+}
+
+.dis-b {
+    display: block !important;
+}
+
+.dis-ib {
+    display: inline-block !important;
+}
+
+.dis-n {
+    display: none !important;
+}
+
+.dis-t {
+    display: table !important;
+}
+
+.dis-c {
+    display: table-cell !important;
+}
+
+.dis-r {
+    display: table-row !important;
+}
+
+.fl-l {
+    float: left;
+}
+
+.fl-r {
+    float: right;
+}
+
+.font-b { font-weight: bold !important; }
+.font-n { font-weight: normal !important;; }
+
+.border-t {
+    border-top: 1px solid $border-color;
+}
+
+.border-b {
+    border-bottom: 1px solid $border-color;
+}
+
+.border-light-gray {
+    border-color: $light-gray !important;
+}
+
+.m0 { margin: 0 !important; }
+.mt-5 { margin-top: 5px !important; }
+.mt-10 { margin-top: 10px !important; }
+.ml-15 { margin-left: 15px !important; }
+.mb-5 { margin-bottom: 5px !important; }
+.mb-10 { margin-bottom: 10px !important; }
+.mb-15 { margin-bottom: 15px !important; }
+
+.pt-10 { padding-top: 10px !important; }
+.pr-10 { padding-right: 10px !important; }
+
+.text-c {
+    text-align: center;
+}
+
+.text-r {
+    text-align: right;
+}
+
+.position-a {
+    position: absolute;
+}
+
+.position-r {
+    position: relative;
+}
+
+.table-row {
+    display: table-row !important;
+}
+
+.v-m {
+    vertical-align: middle;
+}
+
+
+

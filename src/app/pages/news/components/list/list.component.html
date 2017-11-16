@@ -1,0 +1,86 @@
+<orb-card title="News">
+    <div class="newsBox border-none">
+        <tabset class="tabBox clearfix"
+                (onSelect)="tabSelect($event)">
+            <tab title="ALL">
+                <div *ngFor="let newsList of newsListData | paginate: { itemsPerPage: 10, currentPage: currentNumber };"
+                     class="newsBox clearfix">
+                    <div [ngSwitch]="newsList.news_type">
+                        <div *ngSwitchCase="'live'">
+                            <div class="newsBox_list">
+                                <div class="newsBox_meta">{{newsList.date | date: 'yyyy/MM/dd'}}</div>
+                                <div class="newsBox_contents">
+                                    <div class="newsBox-contents_title">{{newsList.article_title}}</div>
+                                    <div class="newsBox-contents_detail">
+                                        会場 : {{newsList.venue}}<br />
+                                        開場 : {{newsList.enter_time | date: 'HH:mm'}}<br />
+                                        開演 : {{newsList.start_time | date: 'HH:mm'}}<br />
+                                        出演 : {{newsList.performer}}<br />
+                                    </div>
+                                </div>
+                                <div class="more">
+                                    <a href="/#/pages/live/detail/{{newsList._id}}">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngSwitchCase="'release'">
+                            <div class="newsBox_list">
+                                <div class="newsBox_meta">{{newsList.date | date: 'yyyy/MM/dd'}}</div>
+                                <div class="newsBox_contents">
+                                    <div class="newsBox-contents_title">{{newsList.article_title}}</div>
+                                    <div class="newsBox-contents_detail">
+                                        <div class="newsBox-contents_detail_article" [innerHTML]="newsList.article_content">.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="more">
+                                    <a href="/#/pages/discography/detail/{{newsList._id}}">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <tab title="RELEASE">
+                <div *ngFor="let newsList of newsListData | paginate: { itemsPerPage: 10, currentPage: currentNumber };"
+                     class="newsBox clearfix">
+                    <div class="newsBox_list">
+                        <div class="newsBox_meta">{{newsList.date | date: 'yyyy/MM/dd'}}</div>
+                        <div class="newsBox_contents">
+                            <div class="newsBox-contents_title">{{newsList.article_title}}</div>
+                            <div class="newsBox-contents_detail">
+                                <div class="newsBox-contents_detail_article" [innerHTML]="newsList.article_content">.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more">
+                            <a href="/#/pages/discography/detail/{{newsList._id}}">Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <tab title="LIVE">
+                <div *ngFor="let newsList of newsListData | paginate: { itemsPerPage: 10, currentPage: currentNumber };"
+                     class="newsBox clearfix">
+                    <div class="newsBox_list">
+                        <div class="newsBox_meta">{{newsList.date | date: 'yyyy/MM/dd'}}</div>
+                        <div class="newsBox_contents">
+                            <div class="newsBox-contents_title">{{newsList.article_title}}</div>
+                            <div class="newsBox-contents_detail">
+                                会場 : {{newsList.venue}}<br />
+                                開場 : {{newsList.enter_time | date: 'HH:mm'}}<br />
+                                開演 : {{newsList.start_time | date: 'HH:mm'}}<br />
+                                出演 : {{newsList.performer}}<br />
+                            </div>
+                        </div>
+                        <div class="more">
+                            <a href="/#/pages/live/detail/{{newsList._id}}">Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+    <pagination-controls (pageChange)="currentNumber = $event"></pagination-controls>
+</orb-card>
+

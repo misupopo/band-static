@@ -1,89 +1,51 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { TabsModule } from "ngx-tabs";
 
 import {
-    NbActionsModule,
-    NbCardModule,
-    NbLayoutModule,
-    NbMenuModule,
-    NbRouteTabsetModule,
-    NbSearchModule,
-    NbSidebarModule,
-    NbTabsetModule,
-    NbThemeModule,
-    NbUserModule,
-    NbCheckboxModule,
-} from '@nebular/theme';
-
-import {
-    FooterComponent,
     HeaderComponent,
-    SearchInputComponent,
-    ThemeSettingsComponent,
-    ThemeSwitcherComponent,
-    TinyMCEComponent,
+    FooterComponent,
+    PagingComponent,
+    CardComponent
 } from './components';
-import {CapitalizePipe, PluralPipe, RoundPipe, TimingPipe} from './pipes';
+
 import {
-    OneColumnLayoutComponent,
-    SampleLayoutComponent,
-    ThreeColumnsLayoutComponent,
-    TwoColumnsLayoutComponent,
-} from './layouts';
-import {DEFAULT_THEME} from './styles/theme.default';
-import {COSMIC_THEME} from './styles/theme.cosmic';
+    RequestManager,
+    CamelcaseConverter,
+    DateManager
+} from './services';
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
 const NB_MODULES = [
-    NbCardModule,
-    NbLayoutModule,
-    NbTabsetModule,
-    NbRouteTabsetModule,
-    NbMenuModule,
-    NbUserModule,
-    NbActionsModule,
-    NbSearchModule,
-    NbSidebarModule,
-    NbCheckboxModule,
     NgbModule,
 ];
 
 const COMPONENTS = [
-    ThemeSwitcherComponent,
     HeaderComponent,
     FooterComponent,
-    SearchInputComponent,
-    ThemeSettingsComponent,
-    TinyMCEComponent,
-    OneColumnLayoutComponent,
-    SampleLayoutComponent,
-    ThreeColumnsLayoutComponent,
-    TwoColumnsLayoutComponent,
+    PagingComponent,
+    CardComponent
+];
+
+const SERVICES = [
+    RequestManager,
+    CamelcaseConverter,
+    DateManager
 ];
 
 const PIPES = [
-    CapitalizePipe,
-    PluralPipe,
-    RoundPipe,
-    TimingPipe,
 ];
 
 const NB_THEME_PROVIDERS = [
-    ...NbThemeModule.forRoot(
-        {
-            name: 'cosmic',
-        },
-        [DEFAULT_THEME, COSMIC_THEME],
-    ).providers,
-    ...NbSidebarModule.forRoot().providers,
-    ...NbMenuModule.forRoot().providers,
 ];
 
 @NgModule({
-    imports: [...BASE_MODULES, ...NB_MODULES],
+    imports: [...BASE_MODULES, ...NB_MODULES, HttpClientModule, NgxPaginationModule, TabsModule],
     exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
     declarations: [...COMPONENTS, ...PIPES],
 })
@@ -91,7 +53,10 @@ export class ThemeModule {
     static forRoot(): ModuleWithProviders {
         return <ModuleWithProviders>{
             ngModule: ThemeModule,
-            providers: [...NB_THEME_PROVIDERS],
+            providers: [
+                ...NB_THEME_PROVIDERS,
+                SERVICES,
+            ],
         };
     }
 }

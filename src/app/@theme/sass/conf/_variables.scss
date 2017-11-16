@@ -1,0 +1,36 @@
+// color
+$border-color: #a7a7a7;
+$default-font-color: #343434;
+
+$light-gray: #e1dfdf;
+
+$default-theme-color: #72bb3b;
+
+$cd-color: #34dfa5;
+$mv-color: #34d9df;
+
+$form-border-color: #e4e4e4;
+$form-border-active-color: $default-theme-color;
+
+$not-complete: #c0c0c0;
+
+// width
+$content-width: 1040px;
+$content-padding: 25px;
+
+$content-main-size: ($content-width - ($content-padding * 2));
+// 1042px
+$content-full-size: ($content-width + ($content-padding * 2));
+
+$size-xs: 10px;
+$size-sm: 15px;
+$size-md: 20px;
+
+$default-font-size: 14px;
+$default-radius-size: 4px;
+$default-button-radius-size: 8px;
+
+$display1-size: 1.4rem !default;
+
+$assets-root: '/assets';
+$images-root: '/img/';

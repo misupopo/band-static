@@ -1,0 +1,49 @@
+@import '../../@theme/sass/conf/conf';
+
+.newsBox_meta {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.newsBox_contents {
+    line-height: 2.5rem;
+    padding-left: 116px;
+}
+
+.newsBox-contents_detail_article {
+    white-space: pre-wrap;
+}
+
+.newsBox-contents_title {
+    line-height: 1.4rem;
+    margin-bottom: 17px;
+}
+
+.newsBox {
+    margin-bottom: 38px;
+    border-bottom: 1px solid $border-color;
+}
+
+.newsBox-contents_detail {
+    margin-bottom: 28px;
+}
+
+.tabBox {
+    margin-bottom: 45px;
+}
+
+.newsBox_list {
+    position: relative;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 38px;
+
+    &:last-child {
+        border: none;
+        margin: 0;
+    }
+}
+
+.more {
+    margin-bottom: 30px;
+}
