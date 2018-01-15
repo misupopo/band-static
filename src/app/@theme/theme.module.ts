@@ -10,7 +10,8 @@ import {
     HeaderComponent,
     FooterComponent,
     PagingComponent,
-    CardComponent
+    CardComponent,
+    ModalBasicComponent
 } from './components';
 
 import {
@@ -29,7 +30,8 @@ const COMPONENTS = [
     HeaderComponent,
     FooterComponent,
     PagingComponent,
-    CardComponent
+    CardComponent,
+    ModalBasicComponent
 ];
 
 const SERVICES = [

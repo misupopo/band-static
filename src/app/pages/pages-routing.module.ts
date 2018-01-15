@@ -29,6 +29,10 @@ const routes: Routes = [{
             loadChildren: './discography/discography.module#DiscographyModule',
         },
         {
+            path: 'profile',
+            loadChildren: './profile/profile.module#ProfileModule',
+        },
+        {
             path: '',
             redirectTo: 'home',
             pathMatch: 'full',

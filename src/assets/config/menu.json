@@ -16,7 +16,8 @@
             "link": "/#/pages/discography"
         },
         {
-            "title": "Biography"
+            "title": "Profile",
+            "link": "/#/pages/profile"
         },
         {
             "title": "Movie"
