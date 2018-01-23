@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TabsModule } from "ngx-tabs";
+import { CalendarModule } from 'angular-calendar';
 
 import {
     HeaderComponent,
@@ -47,7 +48,7 @@ const NB_THEME_PROVIDERS = [
 ];
 
 @NgModule({
-    imports: [...BASE_MODULES, ...NB_MODULES, HttpClientModule, NgxPaginationModule, TabsModule],
+    imports: [...BASE_MODULES, ...NB_MODULES, HttpClientModule, NgxPaginationModule, TabsModule, CalendarModule.forRoot()],
     exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
     declarations: [...COMPONENTS, ...PIPES],
 })

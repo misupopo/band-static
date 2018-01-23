@@ -33,6 +33,10 @@ const routes: Routes = [{
             loadChildren: './profile/profile.module#ProfileModule',
         },
         {
+            path: 'schedule',
+            loadChildren: './schedule/schedule.module#ScheduleModule',
+        },
+        {
             path: '',
             redirectTo: 'home',
             pathMatch: 'full',

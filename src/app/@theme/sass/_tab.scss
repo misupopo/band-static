@@ -37,6 +37,7 @@
 
     .nav-tabs {
         @include clearfix();
+        border-bottom: 0;
     }
 }
 

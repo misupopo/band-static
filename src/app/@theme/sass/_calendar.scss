@@ -1,0 +1,95 @@
+@import '../../@theme/sass/conf/conf';
+
+
+.calendarNavBox_buttonBox {
+    li {
+        &.active {
+            background: #34b1df;
+            border-color: #34b1df !important;
+
+            span {
+                color: #fff !important;
+            }
+        }
+    }
+
+
+}
+
+.calendarContentBox {
+    .cal-month-view,
+    .cal-week-view,
+    .cal-day-view {
+        background: #fff;
+    }
+
+    .cal-month-view {
+        .cal-header {
+            padding: 10px 0;
+
+            .cal-month-view {
+                .cal-cell-row {
+                    padding: 10px 0;
+                }
+            }
+
+            .cal-cell {
+                &:hover {
+                    background: none;
+                }
+            }
+        }
+
+        .cal-days {
+            .cal-weekend {
+                .cal-day-number {
+                    color: #29bbde;
+                }
+            }
+        }
+
+        .cal-day-badge {
+            background-color: #34dfa5;
+        }
+
+        .cal-open-day-events {
+            > div {
+                margin-bottom: 6px;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        .cal-open-day-events {
+            padding: 11px 15px;
+            background-color: #402844;
+        }
+    }
+
+    .cal-week-view {
+        .cal-day-headers {
+            margin: 0;
+
+            span {
+                line-height: 2.6rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        .cal-header {
+            padding: 9px 5px 3px;
+        }
+
+        .cal-events-row {
+            height: 37px;
+        }
+
+        .cal-day-headers {
+            margin-bottom: 7px;
+        }
+    }
+}
+
+

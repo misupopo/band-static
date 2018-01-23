@@ -1,0 +1,53 @@
+<orb-card title="Schedule">
+    <div class="tabBox calendarNavBox clearfix mb-20">
+        <div class="tabset">
+            <ul class="calendarNavBox_buttonBox">
+                <li [ngClass]="{'active': view === 'month'}">
+                    <a class="btn"
+                       (click)="formChange('month')">
+                        <span>Month</span>
+                    </a>
+                </li>
+                <li [ngClass]="{'active': view === 'week'}">
+                    <a class="btn"
+                       (click)="formChange('week')">
+                        <span>Week</span>
+                    </a>
+                </li>
+                <li [ngClass]="{'active': view === 'day'}">
+                    <a class="btn"
+                       (click)="formChange('day')">
+                        <span>Day</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="calendarContentBox">
+        <div [ngSwitch]="view">
+            <mwl-calendar-month-view
+                    *ngSwitchCase="'month'"
+                    [viewDate]="viewDate"
+                    [events]="events"
+                    [activeDayIsOpen]="true"
+                    (eventClicked)="eventClicked($event)"
+                    (eventTimesChanged)="eventTimesChanged($event)">
+            </mwl-calendar-month-view>
+            <mwl-calendar-week-view
+                    *ngSwitchCase="'week'"
+                    [viewDate]="viewDate"
+                    [events]="events"
+                    (eventClicked)="eventClicked($event)"
+                    (eventTimesChanged)="eventTimesChanged($event)">
+            </mwl-calendar-week-view>
+            <mwl-calendar-day-view
+                    *ngSwitchCase="'day'"
+                    [viewDate]="viewDate"
+                    [events]="events"
+                    (eventClicked)="eventClicked($event)"
+                    (eventTimesChanged)="eventTimesChanged($event)">
+            </mwl-calendar-day-view>
+        </div>
+    </div>
+</orb-card>
+
