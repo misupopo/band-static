@@ -5,6 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TabsModule } from "ngx-tabs";
+import {
+    NgbDatepickerModule,
+    NgbTimepickerModule
+} from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from 'angular-calendar';
 
 import {
@@ -48,7 +52,10 @@ const NB_THEME_PROVIDERS = [
 ];
 
 @NgModule({
-    imports: [...BASE_MODULES, ...NB_MODULES, HttpClientModule, NgxPaginationModule, TabsModule, CalendarModule.forRoot()],
+    imports: [...BASE_MODULES, ...NB_MODULES, HttpClientModule, NgxPaginationModule, TabsModule,
+        CalendarModule.forRoot(),
+        NgbDatepickerModule.forRoot(),
+        NgbTimepickerModule.forRoot()],
     exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
     declarations: [...COMPONENTS, ...PIPES],
 })

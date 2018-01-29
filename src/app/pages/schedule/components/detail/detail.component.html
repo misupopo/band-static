@@ -1,51 +1,77 @@
 <orb-card title="Schedule">
-    <div class="tabBox calendarNavBox clearfix mb-20">
-        <div class="tabset">
-            <ul class="calendarNavBox_buttonBox">
-                <li [ngClass]="{'active': view === 'month'}">
-                    <a class="btn"
-                       (click)="formChange('month')">
-                        <span>Month</span>
-                    </a>
-                </li>
-                <li [ngClass]="{'active': view === 'week'}">
-                    <a class="btn"
-                       (click)="formChange('week')">
-                        <span>Week</span>
-                    </a>
-                </li>
-                <li [ngClass]="{'active': view === 'day'}">
-                    <a class="btn"
-                       (click)="formChange('day')">
-                        <span>Day</span>
-                    </a>
-                </li>
-            </ul>
+    <div class="clearfix">
+        <div class="tabBox calendarNavBox fl-l clearfix mb-20">
+            <div class="tabset">
+                <ul class="calendarNavBox_buttonBox">
+                    <li [ngClass]="{'active': view === 'month'}">
+                        <a class="btn"
+                           (click)="formChange('month')">
+                            <span>Month</span>
+                        </a>
+                    </li>
+                    <li [ngClass]="{'active': view === 'week'}">
+                        <a class="btn"
+                           (click)="formChange('week')">
+                            <span>Week</span>
+                        </a>
+                    </li>
+                    <li [ngClass]="{'active': view === 'day'}">
+                        <a class="btn"
+                           (click)="formChange('day')">
+                            <span>Day</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+
+        <!--<div>-->
+            <!--<div class="tabBox calendarNavBox fl-r clearfix mb-20">-->
+                <!--<div class="tabset">-->
+                    <!--<ul class="calendarNavBox_buttonBox">-->
+                        <!--<li [ngClass]="{'active': view === 'month'}" mwlCalendarPreviousView>-->
+                            <!--<a class="btn">-->
+                                <!--<span>先月</span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li [ngClass]="{'active': view === 'week'}" mwlCalendarToday>-->
+                            <!--<a class="btn">-->
+                                <!--<span>今月</span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li [ngClass]="{'active': view === 'day'}" mwlCalendarNextView>-->
+                            <!--<a class="btn">-->
+                                <!--<span>来月</span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <calenderHeader
+                [(view)]="view"
+                [(viewDate)]="viewDate"
+                (viewDateChange)="updateCalendarEvents()"
+                (viewChange)="updateCalendarEvents()"></calenderHeader>
+
     </div>
     <div class="calendarContentBox">
         <div [ngSwitch]="view">
             <mwl-calendar-month-view
                     *ngSwitchCase="'month'"
                     [viewDate]="viewDate"
-                    [events]="events"
-                    [activeDayIsOpen]="true"
-                    (eventClicked)="eventClicked($event)"
-                    (eventTimesChanged)="eventTimesChanged($event)">
+                    [events]="events">
             </mwl-calendar-month-view>
             <mwl-calendar-week-view
                     *ngSwitchCase="'week'"
                     [viewDate]="viewDate"
-                    [events]="events"
-                    (eventClicked)="eventClicked($event)"
-                    (eventTimesChanged)="eventTimesChanged($event)">
+                    [events]="events">
             </mwl-calendar-week-view>
             <mwl-calendar-day-view
                     *ngSwitchCase="'day'"
                     [viewDate]="viewDate"
-                    [events]="events"
-                    (eventClicked)="eventClicked($event)"
-                    (eventTimesChanged)="eventTimesChanged($event)">
+                    [events]="events">
             </mwl-calendar-day-view>
         </div>
     </div>
