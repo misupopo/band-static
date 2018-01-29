@@ -1,33 +1,39 @@
-<div class="row text-center">
-    <div class="col-md-4">
-        <div class="btn-group">
-            <div
-                    class="btn btn-primary"
-                    mwlCalendarPreviousView
-                    [view]="view"
-                    [(viewDate)]="viewDate"
-                    (viewDateChange)="viewDateChange.next(viewDate)">
-                Previous
-            </div>
-            <div
-                    class="btn btn-outline-secondary"
-                    mwlCalendarToday
-                    [(viewDate)]="viewDate"
-                    (viewDateChange)="viewDateChange.next(viewDate)">
-                Today
-            </div>
-            <div
-                    class="btn btn-primary"
-                    mwlCalendarNextView
-                    [view]="view"
-                    [(viewDate)]="viewDate"
-                    (viewDateChange)="viewDateChange.next(viewDate)">
-                Next
+<div class="row text-right">
+    <div class="col-md-12 pr-0">
+        <div class="tabBox calendarNavBox fl-r clearfix mb-20">
+            <div class="tabset">
+                <ul class="calendarNavBox_buttonBox">
+                    <li>
+                        <a class="btn"
+                           mwlCalendarPreviousView
+                           [view]="view"
+                           [(viewDate)]="viewDate"
+                           (viewDateChange)="viewDateChange.next(viewDate)">
+                            <span>Previous</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn"
+                           mwlCalendarToday
+                           [(viewDate)]="viewDate"
+                           (viewDateChange)="viewDateChange.next(viewDate)">
+                            <span>Today</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn"
+                           mwlCalendarNextView
+                           [view]="view"
+                           [(viewDate)]="viewDate"
+                           (viewDateChange)="viewDateChange.next(viewDate)">
+                            <span>Next</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <!--<div class="col-md-4">-->
-    <!--<h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</h3>-->
-    <!--</div>-->
 </div>
-<br>
+<div class="calenderTitle col-md-12 text-center">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</h3>
+</div>
