@@ -21,7 +21,7 @@ export class DetailComponent {
             },
             action: 'news/list',
         }).subscribe((response: any) => {
-            this.listData = response.result;
+            this.listData = this.dateManager.allListConvert(response.result);
             this.events = this.eventInsert(this.listData);
         },
         error => {
