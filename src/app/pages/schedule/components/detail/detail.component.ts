@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DetailDataService } from './detail.service';
 import { ListModel } from './detail.model';
 import { DateManager } from "../../../../@theme/services";
@@ -15,7 +16,8 @@ export class DetailComponent {
     events: any;
 
     constructor(private dateManager: DateManager,
-                private detailDataService: DetailDataService) {
+                private detailDataService: DetailDataService,
+                private router: Router) {
         this.getListData({
             params: {
             },
@@ -54,6 +56,21 @@ export class DetailComponent {
 
     public formChange = (form) => {
         this.view = form;
+    }
+
+    public dayClicked = (data) => {
+        const newsType = data.news_type;
+
+        switch (newsType){
+            case 'release':
+                this.router.navigate([`/pages/discography/detail/${data._id}`]);
+                break;
+            case 'live':
+                this.router.navigate([`/pages/live/detail/${data._id}`]);
+                break;
+            default:
+                break;
+        }
     }
 }
 
