@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { CoreModule } from './@core/core.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoadingModule } from 'ngx-loading';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
         ThemeModule.forRoot(),
         CoreModule.forRoot(),
         NgxPaginationModule,
+        LoadingModule,
     ],
     bootstrap: [AppComponent],
     providers: [
