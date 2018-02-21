@@ -1,0 +1,14 @@
+{
+    "name": "Second Orbit",
+    "short_name": "Second Orbit",
+    "lang": "ja",
+    "start_url": "/",
+    "display": "browser",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "16",
+            "type": "image/png"
+        }
+    ]
+}
