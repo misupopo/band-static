@@ -31,8 +31,10 @@ export class DetailComponent {
             },
             action: 'release/detail',
         }).subscribe((response: any) => {
-            // response.result.date = this.dateManager.convertTime(new Date(response.result));
             this.detailData = response.result;
+                this.detailData.date = this.dateManager.convertTime(new Date(this.detailData.date));
+                this.detailData.enter_time = this.dateManager.convertTime(new Date(this.detailData.enter_time));
+                this.detailData.start_time = this.dateManager.convertTime(new Date(this.detailData.start_time));
         },
         error => {
         });

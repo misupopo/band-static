@@ -27,6 +27,9 @@ export class DetailComponent {
             action: 'live/detail',
         }).subscribe((response: any) => {
             this.detailData = response.result;
+            this.detailData.date = this.dateManager.convertTime(new Date(this.detailData.date));
+            this.detailData.enter_time = this.dateManager.convertTime(new Date(this.detailData.enter_time));
+            this.detailData.start_time = this.dateManager.convertTime(new Date(this.detailData.start_time));
         },
         error => {
         });
