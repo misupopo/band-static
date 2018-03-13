@@ -1,26 +1,50 @@
 <header id="header" class="header">
     <div class="header_inner">
         <nav class="clearfix">
-            <h1>
-                <a href="#">
-                    <img src="assets/img/logo.png" alt="orbit">
-                </a>
-            </h1>
-            <ul class="header_menu">
-                <li *ngFor="let menuItem of menu;">
-                    <a href="{{menuItem.link}}">{{menuItem.title}}</a>
-                </li>
-                <li class="button-facebook">
-                    <a href="https://www.facebook.com/SecondOrbitOfficial/" [target]="_blank">
-                        <img src="assets/img/facebook_button.png" alt="facebook">
+            <div class="fullSizeMenu">
+                <h1>
+                    <a href="/#/pages/home">
+                        <img src="assets/img/logo.png" alt="orbit">
                     </a>
-                </li>
-                <li class="button-twitter">
-                    <a href="https://twitter.com/second_orbit" [target]="_blank">
-                        <img src="assets/img/twitter_button.png" alt="twitter">
+                </h1>
+                <ul class="header_menu">
+                    <li *ngFor="let menuItem of menu;">
+                        <a href="{{menuItem.link}}">{{menuItem.title}}</a>
+                    </li>
+                    <li class="button-facebook">
+                        <a href="https://www.facebook.com/SecondOrbitOfficial/" [target]="_blank">
+                            <img src="assets/img/facebook_button.png" alt="facebook">
+                        </a>
+                    </li>
+                    <li class="button-twitter">
+                        <a href="https://twitter.com/second_orbit" [target]="_blank">
+                            <img src="assets/img/twitter_button.png" alt="twitter">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="limitedSizeMenu">
+                <h1>
+                    <a href="/#/pages/home">
+                        <img src="assets/img/logo.png" alt="orbit">
                     </a>
-                </li>
-            </ul>
+                </h1>
+                <div class="header_menu">
+                    <button [ngClass]="{'dis-n': toggleFlag}" (click)="setToggleMenu(true)" class="button-menu fontButton">
+                        <i class="font-awe fa-align-justify"></i>
+                    </button>
+                    <button [ngClass]="{'dis-n': !toggleFlag}" (click)="setToggleMenu(false)" class="button-menu fontButton">
+                        <i class="font-awe fa-times"></i>
+                    </button>
+                </div>
+            </div>
         </nav>
     </div>
 </header>
+<div class="limitedMenuBox" [ngClass]="{'dis-n': !toggleFlag}">
+    <ul class="limitedMenuBox_menu">
+        <li *ngFor="let menuItem of menu;" (click)="setToggleMenu(false)">
+            <a href="{{menuItem.link}}">{{menuItem.title}}</a>
+        </li>
+    </ul>
+</div>

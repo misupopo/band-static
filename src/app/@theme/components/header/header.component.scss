@@ -57,3 +57,25 @@
 .button-twitter {
     margin-left: 14px !important;
 }
+
+.limitedMenuBox {
+    padding: 17px;
+}
+
+.limitedMenuBox_menu {
+    li {
+        border-top: 1px solid #898989;
+
+        &:first-child {
+            border: none;
+        }
+    }
+
+    a {
+        display: block;
+        padding-left: 4px;
+        color: #fff;
+        line-height: 42px;
+        font-size: 16px;
+    }
+}

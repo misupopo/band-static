@@ -1,0 +1,71 @@
+@import '../../@theme/sass/conf/conf';
+
+.fullSizeWidth {
+    position: relative;
+
+    .limitedSizeMenu {
+        display: none;
+    }
+
+    .limitedFooterInquiryBox {
+        display: none;
+    }
+
+    .limitedMenuBox {
+        display: none
+    }
+}
+
+.limitedSizeWidth {
+    position: relative;
+
+    .fullSizeMenu {
+        display: none;
+    }
+
+    .header_inner,
+    .footer_inner {
+        width: auto !important;
+    }
+
+    .header_inner {
+        padding: 20px 17px 20px 12px !important;
+
+        h1 {
+            img {
+                width: 160px;
+            }
+        }
+    }
+
+    .header_menu {
+        margin-top: 3px !important;
+    }
+
+    .fullSizeFooterInquiryBox {
+        display: none;
+    }
+
+    .footer_inquiry {
+        margin-bottom: 14px;
+    }
+
+    .footer_inner {
+        padding: 35px 17px !important;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .limitedMenuBox {
+        z-index: 1999;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 1);
+    }
+}
+

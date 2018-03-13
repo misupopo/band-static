@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { menuItem } from '../../../../assets/config/menu.json';
+import { ToggleMenuState } from '../../../@core/share/toggleMenu.state';
 
 @Component({
     selector: 'orb-header',
@@ -8,6 +9,15 @@ import { menuItem } from '../../../../assets/config/menu.json';
 })
 export class HeaderComponent {
     public menu = menuItem;
+    public toggleFlag: boolean = false;
 
-    constructor() {}
+    constructor(private toggleMenuState: ToggleMenuState) {
+        this.toggleMenuState.toggleMenuStateData.subscribe((state: any) => {
+            this.toggleFlag = state;
+        });
+    }
+
+    public setToggleMenu(flag) {
+        this.toggleMenuState.setToggleMenuState(flag);
+    }
 }

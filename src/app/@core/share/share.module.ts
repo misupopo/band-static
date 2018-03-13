@@ -2,9 +2,11 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoadingSpinnerState } from './loadingSpinner.state';
+import { ToggleMenuState } from './toggleMenu.state';
 
 const SERVICES = [
-    LoadingSpinnerState
+    LoadingSpinnerState,
+    ToggleMenuState
 ];
 
 @NgModule({

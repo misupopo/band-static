@@ -12,5 +12,20 @@
     }
 }
 
+.fontButton {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
 
+.button-menu {
+    .font-awe {
+        width: 100%;
+    }
 
+    i:before {
+        cursor: pointer;
+        font-size: 24px;
+    }
+}

@@ -8,17 +8,20 @@ import { LoadingSpinnerState } from './@core/share/loadingSpinner.state';
     styleUrls: ['./app.scss']
 })
 export class AppComponent {
-
     public loading = false;
-
-    title = 'app';
+    public screenWidth: number = 0;
 
     constructor(private loadingSpinnerState: LoadingSpinnerState) {
     }
 
     ngOnInit(): void {
+        this.screenWidth = window.innerWidth;
         this.loadingSpinnerState.loadingSpinnerStateData.subscribe((state: any) => {
             this.loading = state;
         });
+    }
+
+    onResize(event) {
+        this.screenWidth = window.innerWidth;
     }
 }

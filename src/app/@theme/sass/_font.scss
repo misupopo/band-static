@@ -1,0 +1,14 @@
+
+i.font-awe {
+    display: inline-block;
+    font-style: normal;
+
+    &:before {
+        display: inline-block;
+        font-family: fontAwesome;
+        font-weight: bold;
+        color: #fff;
+    }
+}
+
+
