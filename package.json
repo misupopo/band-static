@@ -5,7 +5,9 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve --port 4202",
-        "build": "ng build",
+        "build": "rimraf dist && ng build",
+        "build:prod": "npm run build -- --prod",
+        "build:prod:aot": "npm run build:prod -- --aot",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"

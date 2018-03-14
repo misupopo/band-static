@@ -8,7 +8,7 @@
                     会場 : {{detailData.venue}}<br />
                     開場 : {{detailData.enter_time | date: 'HH:mm'}}<br />
                     開演 : {{detailData.start_time | date: 'HH:mm'}}<br />
-                    出演 : {{detailData.performer}}<br />
+                    出演 : <span *ngFor="let performer of detailData.performer; let i = index">{{performer}}<span [hidden]="i === (detailData.performer.length - 1)">, </span></span><br /><br />
                     <br />
                     <div class="newsBox-contents_detail_article" [innerHTML]="detailData.information">
                     </div>

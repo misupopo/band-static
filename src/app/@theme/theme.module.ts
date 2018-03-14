@@ -10,6 +10,7 @@ import {
     NgbTimepickerModule
 } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from 'angular-calendar';
+import { PagesRoutingModule } from '../pages/pages-routing.module';
 
 import {
     HeaderComponent,
@@ -18,6 +19,15 @@ import {
     CardComponent,
     ModalBasicComponent
 } from './components';
+
+import {
+    DiscographyComponent,
+    LiveComponent,
+    NewsComponent,
+    ProfileComponent,
+    ScheduleComponent
+} from '../pages';
+
 
 import {
     RequestManager,
@@ -39,6 +49,14 @@ const COMPONENTS = [
     ModalBasicComponent
 ];
 
+const PAGE_COMPONENTS = [
+    DiscographyComponent,
+    LiveComponent,
+    NewsComponent,
+    ProfileComponent,
+    ScheduleComponent
+];
+
 const SERVICES = [
     RequestManager,
     CamelcaseConverter,
@@ -55,9 +73,9 @@ const NB_THEME_PROVIDERS = [
     imports: [...BASE_MODULES, ...NB_MODULES, HttpClientModule, NgxPaginationModule, TabsModule,
         CalendarModule.forRoot(),
         NgbDatepickerModule.forRoot(),
-        NgbTimepickerModule.forRoot()],
-    exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
-    declarations: [...COMPONENTS, ...PIPES],
+        NgbTimepickerModule.forRoot(), PagesRoutingModule],
+    exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PAGE_COMPONENTS, ...PIPES],
+    declarations: [...COMPONENTS, ...PIPES, ...PAGE_COMPONENTS],
 })
 export class ThemeModule {
     static forRoot(): ModuleWithProviders {
