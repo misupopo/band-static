@@ -9,6 +9,12 @@ html, body {
     background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,81,196,1) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,81,196,1) 100%);
     font-family: "游明朝",YuMincho,"ヒラギノ明朝 ProN W3","Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝","Sawarabi Mincho",serif;
+
+    &.toggleOpen {
+        background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 100%);
+    }
 }
 
 body {

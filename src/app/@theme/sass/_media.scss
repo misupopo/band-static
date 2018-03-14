@@ -67,5 +67,34 @@
         bottom: 0;
         background-color: rgba(0, 0, 0, 1);
     }
-}
 
+    .newsBox_meta {
+        margin-bottom: 33px;
+        position: relative;
+    }
+
+    .newsBox_contents {
+        padding-left: 0;
+    }
+
+    .pagination-previous,
+    .pagination-next {
+        padding: 15px 0 0 !important;
+    }
+
+    .News, .Live {
+        .notice-list_date {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .notice-list_text {
+            margin-left: 0;
+        }
+
+        .notice-list_icon {
+            margin-left: 0 !important;
+        }
+    }
+
+}

@@ -14,6 +14,14 @@ export class HeaderComponent {
     constructor(private toggleMenuState: ToggleMenuState) {
         this.toggleMenuState.toggleMenuStateData.subscribe((state: any) => {
             this.toggleFlag = state;
+
+            const bodyDom = document.querySelector('body');
+
+            if (this.toggleFlag) {
+                bodyDom.className = 'toggleOpen';
+            } else {
+                bodyDom.className = '';
+            }
         });
     }
 

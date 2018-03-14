@@ -24,9 +24,6 @@ export class DetailComponent {
             action: 'news/list',
         }).subscribe((response: any) => {
             this.listData = this.dateManager.allListConvert(response.result);
-
-            console.log(this.listData);
-
             this.events = this.eventInsert(this.listData);
         },
         error => {
