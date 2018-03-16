@@ -49,20 +49,27 @@
     </div>
 </orb-card>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <orb-card title="Facebook">
             <div class="text-center">
                 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSecondOrbitOfficial%2F%3Fref%3Daymt_homepage_panel&tabs=timeline&width=304&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=326395917851056" width="304" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
             </div>
         </orb-card>
     </div>
-    <!--<div class="col-md-6">-->
-        <!--<orb-card title="Twitter">-->
-            <!--<div class="text-center">-->
-                <!--<a class="twitter-timeline" href="https://twitter.com/second_orbit?ref_src=twsrc%5Etfw">Tweets by second_orbit</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
-            <!--</div>-->
-        <!--</orb-card>-->
-    <!--</div>-->
+    <div class="col-md-6">
+        <orb-card title="Twitter">
+            <div class="text-center">
+                <ngx-twitter-timeline
+                        [data]="{
+                            sourceType: 'url',
+                            url: 'https://twitter.com/second_orbit'}"
+                                            [opts]="{
+                            tweetLimit: 5
+                        }"
+                ></ngx-twitter-timeline>
+            </div>
+        </orb-card>
+    </div>
 </div>
 
 

@@ -10,7 +10,7 @@ import {
     NgbTimepickerModule
 } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from 'angular-calendar';
-import { PagesRoutingModule } from '../pages/pages-routing.module';
+import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
 
 import {
     HeaderComponent,
@@ -74,7 +74,8 @@ const NB_THEME_PROVIDERS = [
     imports: [...BASE_MODULES, ...NB_MODULES, HttpClientModule, NgxPaginationModule, TabsModule,
         CalendarModule.forRoot(),
         NgbDatepickerModule.forRoot(),
-        NgbTimepickerModule.forRoot()],
+        NgbTimepickerModule.forRoot(),
+        NgxTwitterTimelineModule],
     exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PAGE_COMPONENTS, ...PIPES],
     declarations: [...COMPONENTS, ...PIPES, ...PAGE_COMPONENTS],
 })
