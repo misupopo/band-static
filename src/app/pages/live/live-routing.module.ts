@@ -7,19 +7,17 @@ import { DetailComponent } from './components/detail/detail.component';
 const routes: Routes = [
     {
         path: '',
-        component: ListComponent
-    },
-    {
-        path: 'list',
-        component: ListComponent
-    },
-    {
-        path: 'list/:pageNumber',
-        component: ListComponent
-    },
-    {
-        path: 'detail/:id',
-        component: DetailComponent
+        component: ListComponent,
+        children: [{
+            path: 'list',
+            component: ListComponent,
+        }, {
+            path: 'list/:pageNumber',
+            component: ListComponent
+        }, {
+            path: 'detail/:id',
+            component: DetailComponent
+        }],
     }
 ];
 

@@ -2,19 +2,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { routedComponents } from './home-routing.module';
-import { HomeDataService } from './home.service';
+import { HomeRoutingModule, routedComponents } from './home-routing.module';
+import { IndexDataService } from './components/index/index.service';
 
 @NgModule({
     imports: [
         ThemeModule,
-        HttpClientModule
+        HttpClientModule,
+        HomeRoutingModule
     ],
     declarations: [
-        ...routedComponents
+        ...routedComponents,
     ],
     providers: [
-        HomeDataService
+        IndexDataService
     ],
 })
 export class HomeModule {

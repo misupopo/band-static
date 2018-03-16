@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ListComponent } from "./components/list/list.component";
+import {DetailComponent} from "../live/components/detail/detail.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: ListComponent
-    },
-    {
-        path: 'list',
-        component: ListComponent
+        component: ListComponent,
+        children: [{
+            path: 'list',
+            component: ListComponent,
+        }],
     }
 ];
 

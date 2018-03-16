@@ -17,15 +17,17 @@ import {
     FooterComponent,
     PagingComponent,
     CardComponent,
-    ModalBasicComponent
+    ModalBasicComponent,
 } from './components';
 
 import {
+    HomeComponent,
+    PagesComponent,
     DiscographyComponent,
-    LiveComponent,
     NewsComponent,
     ProfileComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    LiveComponent
 } from '../pages';
 
 
@@ -34,6 +36,10 @@ import {
     CamelcaseConverter,
     DateManager
 } from './services';
+
+import {
+    HomeDataService
+} from '../pages/home/home.service';
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
@@ -50,11 +56,6 @@ const COMPONENTS = [
 ];
 
 const PAGE_COMPONENTS = [
-    DiscographyComponent,
-    LiveComponent,
-    NewsComponent,
-    ProfileComponent,
-    ScheduleComponent
 ];
 
 const SERVICES = [
@@ -73,7 +74,7 @@ const NB_THEME_PROVIDERS = [
     imports: [...BASE_MODULES, ...NB_MODULES, HttpClientModule, NgxPaginationModule, TabsModule,
         CalendarModule.forRoot(),
         NgbDatepickerModule.forRoot(),
-        NgbTimepickerModule.forRoot(), PagesRoutingModule],
+        NgbTimepickerModule.forRoot()],
     exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PAGE_COMPONENTS, ...PIPES],
     declarations: [...COMPONENTS, ...PIPES, ...PAGE_COMPONENTS],
 })

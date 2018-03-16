@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { NewsModel } from './home.model';
-import { RequestManager } from '../../@theme/services';
+import { NewsModel } from './index.model';
+import { RequestManager } from '../../../../@theme/services';
 
 @Injectable()
-export class HomeDataService {
+export class IndexDataService {
     constructor(private requestManager: RequestManager) {
     }
 

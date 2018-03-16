@@ -3,15 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DetailComponent } from './components/detail/detail.component';
 import { CalenderHeadComponent } from './components/detail/components/calenderHead/calenderHead.component';
+import {ListComponent} from "../live/components/list/list.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: DetailComponent
-    },
-    {
-        path: 'detail',
-        component: DetailComponent
+        component: DetailComponent,
+        children: [{
+            path: 'detail',
+            component: DetailComponent
+        }],
     }
 ];
 

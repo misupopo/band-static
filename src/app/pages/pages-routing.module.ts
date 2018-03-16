@@ -10,7 +10,7 @@ const routes: Routes = [{
     children: [
         {
             path: 'home',
-            component: HomeComponent,
+            loadChildren: './home/home.module#HomeModule',
         },
         {
             path: 'news',
