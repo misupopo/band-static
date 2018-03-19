@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ProfileComponent } from './profile.component';
 import { DetailComponent } from './components/detail/detail.component';
-import {ListComponent} from "../live/components/list/list.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: DetailComponent,
+        component: ProfileComponent,
         children: [{
+            path: '',
+            component: ProfileComponent
+        }, {
             path: 'detail',
             component: DetailComponent
         }],

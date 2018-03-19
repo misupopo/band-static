@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { DiscographyComponent } from './discography.component';
 import { ListComponent } from "./components/list/list.component";
 import { DetailComponent } from "./components/detail/detail.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: ListComponent,
+        component: DiscographyComponent,
         children: [{
+            path: '',
+            component: ListComponent,
+        }, {
             path: 'list',
             component: ListComponent,
         }, {
@@ -16,7 +20,6 @@ const routes: Routes = [
             component: DetailComponent,
         }],
     }
-
 ];
 
 @NgModule({
@@ -26,6 +29,7 @@ const routes: Routes = [
 export class DiscographyRoutingModule { }
 
 export const routedComponents = [
+    DiscographyComponent,
     ListComponent,
     DetailComponent,
 ];

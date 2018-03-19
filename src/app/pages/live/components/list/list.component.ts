@@ -21,6 +21,8 @@ export class ListComponent {
             this.currentNumber = (params.pageNumber) ? params.pageNumber : 1;
         });
 
+        console.log('list');
+
         this.getListData({
             params: {
             },

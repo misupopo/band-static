@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { NewsComponent } from "./news.component";
 import { ListComponent } from "./components/list/list.component";
-import {DetailComponent} from "../live/components/detail/detail.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: ListComponent,
+        component: NewsComponent,
         children: [{
+            path: '',
+            component: ListComponent,
+        }, {
             path: 'list',
             component: ListComponent,
         }],
@@ -22,5 +25,6 @@ const routes: Routes = [
 export class NewsRoutingModule { }
 
 export const routedComponents = [
+    NewsComponent,
     ListComponent,
 ];

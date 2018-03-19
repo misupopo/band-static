@@ -20,6 +20,8 @@ export class DetailComponent {
             this.detailId = params.id;
         });
 
+        console.log('detail');
+
         this.getDetailData({
             params: {
                 id: this.detailId,
