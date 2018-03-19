@@ -10,15 +10,15 @@ export class DateManager {
             };
 
             if (data.date) {
-                data.date = moment(data.date).utc().format('YYYY/MM/DD HH:mm:ss');
+                data.date = moment(data.date).format('YYYY/MM/DD HH:mm:ss');
             }
 
             if (data.enter_time) {
-                data.enter_time = moment(data.enter_time).utc().format('YYYY/MM/DD HH:mm:ss');
+                data.enter_time = moment(data.enter_time).format('YYYY/MM/DD HH:mm:ss');
             }
 
             if (data.start_time) {
-                data.start_time = moment(data.start_time).utc().format('YYYY/MM/DD HH:mm:ss');
+                data.start_time = moment(data.start_time).format('YYYY/MM/DD HH:mm:ss');
             }
 
             collection.push(Object.assign(data, margeData));
