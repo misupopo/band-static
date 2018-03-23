@@ -3,6 +3,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ListDataService } from './list.service';
 import { ListModel } from './list.model';
 import { DateManager } from "../../../../@theme/services";
+import { ShareButtons } from '@ngx-share/core';
+import { RequestConfigService } from '../../../../@core/data/request.service';
 
 @Component({
     selector: 'orb-liveList',
@@ -12,16 +14,19 @@ import { DateManager } from "../../../../@theme/services";
 export class ListComponent {
     public liveListData: any;
     public currentNumber: number = 1;
+    public webSiteUrl: string;
 
     constructor(private dateManager: DateManager,
                 private listDataService: ListDataService,
-                private activatedRoute: ActivatedRoute) {
-
+                private activatedRoute: ActivatedRoute,
+                public share: ShareButtons,
+                private router: Router,
+                private requestConfigService: RequestConfigService) {
         this.activatedRoute.params.subscribe((params: Params) => {
             this.currentNumber = (params.pageNumber) ? params.pageNumber : 1;
         });
 
-        console.log('list');
+        this.webSiteUrl = this.requestConfigService.getRequestWebSiteUrl();
 
         this.getListData({
             params: {

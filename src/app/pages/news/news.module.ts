@@ -5,6 +5,7 @@ import { NewsRoutingModule, routedComponents } from './news-routing.module';
 import { ListDataService } from './components/list/list.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TabsModule } from "ngx-tabs";
+import { ShareModule } from '@ngx-share/core';
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import { TabsModule } from "ngx-tabs";
         NewsRoutingModule,
         NgxPaginationModule,
         TabsModule,
+        ShareModule.forRoot(),
     ],
     declarations: [
         routedComponents,

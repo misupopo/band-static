@@ -5,12 +5,14 @@ import { DiscographyRoutingModule, routedComponents } from './discography-routin
 import { ListDataService } from './components/list/list.service';
 import { DetailDataService } from './components/detail/detail.service';
 import { TabsModule } from "ngx-tabs";
+import { ShareModule } from '@ngx-share/core';
 
 @NgModule({
     imports: [
         ThemeModule,
         DiscographyRoutingModule,
         TabsModule,
+        ShareModule.forRoot(),
     ],
     declarations: [
         routedComponents,

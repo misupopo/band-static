@@ -23,6 +23,8 @@
                 "../node_modules/bootstrap/dist/css/bootstrap.css",
                 "../node_modules/angular-calendar/css/angular-calendar.css",
                 "../node_modules/font-awesome/scss/font-awesome.scss",
+                "../node_modules/@ngx-share/button/styles/share-buttons.scss",
+                "../node_modules/@ngx-share/button/styles/themes/default/default-theme.scss",
                 "styles.css"
             ],
             "scripts": [],

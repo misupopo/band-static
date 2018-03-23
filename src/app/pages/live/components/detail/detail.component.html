@@ -12,6 +12,22 @@
                     <br />
                     <div class="newsBox-contents_detail_article" [innerHTML]="detailData.information">
                     </div>
+                    <div class="text-right">
+                        <button shareButton="facebook"
+                                class="mr-5"
+                                [sbUrl]="webSiteUrl + shareUrl"
+                                [style.backgroundColor]="share.prop.facebook.color">
+                            <i [class]="share.prop.facebook.icon"></i>
+                            <span>シェア</span>
+                        </button>
+                        <button shareButton="twitter"
+                                [sbUrl]="webSiteUrl + shareUrl"
+                                [style.backgroundColor]="share.prop.twitter.color"
+                                [sbDescription]="detailData.title">
+                            <i [class]="share.prop.twitter.icon"></i>
+                            <span>ツイート</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,6 +3,8 @@ import { ActivatedRoute, Params } from "@angular/router";
 import { DateManager } from "../../../../@theme/services";
 import { ListDataService } from "./list.service";
 import { ListModel } from "./list.model";
+import { ShareButtons } from '@ngx-share/core';
+import { RequestConfigService } from "../../../../@core/data/request.service";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -19,12 +21,16 @@ export class ListComponent {
         'live'
     ];
     public tabState: string;
+    public webSiteUrl: string;
 
     constructor(private dateManager: DateManager,
                 private listDataService: ListDataService,
-                private activatedRoute: ActivatedRoute) {
-
+                private activatedRoute: ActivatedRoute,
+                private requestConfigService: RequestConfigService,
+                public share: ShareButtons) {
         this.tabState = 'news';
+
+        this.webSiteUrl = this.requestConfigService.getRequestWebSiteUrl();
 
         this.getListData({
             params: {

@@ -11,6 +11,7 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from 'angular-calendar';
 import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
+import { ShareButtonModule } from '@ngx-share/button';
 
 import {
     HeaderComponent,
@@ -19,17 +20,6 @@ import {
     CardComponent,
     ModalBasicComponent,
 } from './components';
-
-import {
-    HomeComponent,
-    PagesComponent,
-    DiscographyComponent,
-    NewsComponent,
-    ProfileComponent,
-    ScheduleComponent,
-    LiveComponent
-} from '../pages';
-
 
 import {
     RequestManager,
@@ -52,7 +42,7 @@ const COMPONENTS = [
     FooterComponent,
     PagingComponent,
     CardComponent,
-    ModalBasicComponent
+    ModalBasicComponent,
 ];
 
 const PAGE_COMPONENTS = [
@@ -75,7 +65,8 @@ const NB_THEME_PROVIDERS = [
         CalendarModule.forRoot(),
         NgbDatepickerModule.forRoot(),
         NgbTimepickerModule.forRoot(),
-        NgxTwitterTimelineModule],
+        NgxTwitterTimelineModule,
+        ShareButtonModule.forRoot()],
     exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PAGE_COMPONENTS, ...PIPES],
     declarations: [...COMPONENTS, ...PIPES, ...PAGE_COMPONENTS],
 })

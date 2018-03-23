@@ -29,3 +29,22 @@
         font-size: 24px;
     }
 }
+
+.sb-facebook, .sb-twitter {
+    color: #fff;
+    font-family: Helvetica, Arial, "hiragino kaku gothic pro",meiryo,"ms pgothic",sans-serif;
+    vertical-align: middle;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    height: 25px;
+    padding: 0 8px 2px;
+
+    i {
+        padding-right: 3px;
+    }
+}
+
+.sb-twitter {
+
+}
