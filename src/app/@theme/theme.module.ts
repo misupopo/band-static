@@ -12,6 +12,7 @@ import {
 import { CalendarModule } from 'angular-calendar';
 import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
 import { ShareButtonModule } from '@ngx-share/button';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 
 import {
     HeaderComponent,
@@ -66,7 +67,8 @@ const NB_THEME_PROVIDERS = [
         NgbDatepickerModule.forRoot(),
         NgbTimepickerModule.forRoot(),
         NgxTwitterTimelineModule,
-        ShareButtonModule.forRoot()],
+        ShareButtonModule.forRoot(),
+        RouterModule],
     exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PAGE_COMPONENTS, ...PIPES],
     declarations: [...COMPONENTS, ...PIPES, ...PAGE_COMPONENTS],
 })

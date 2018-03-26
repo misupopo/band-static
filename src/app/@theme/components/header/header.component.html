@@ -3,13 +3,13 @@
         <nav class="clearfix">
             <div class="fullSizeMenu">
                 <h1>
-                    <a href="/">
+                    <a [routerLink]="['/']">
                         <img src="assets/img/logo.png" alt="orbit">
                     </a>
                 </h1>
                 <ul class="header_menu">
                     <li *ngFor="let menuItem of menu;">
-                        <a href="{{menuItem.link}}">{{menuItem.title}}</a>
+                        <a [routerLink]="[menuItem.link]">{{menuItem.title}}</a>
                     </li>
                     <li class="button-facebook">
                         <a href="https://www.facebook.com/SecondOrbitOfficial/" target="_blank">
@@ -25,7 +25,7 @@
             </div>
             <div class="limitedSizeMenu">
                 <h1>
-                    <a href="/">
+                    <a [routerLink]="['/']">
                         <img src="assets/img/logo.png" alt="orbit">
                     </a>
                 </h1>
@@ -44,7 +44,7 @@
 <div class="limitedMenuBox" [ngClass]="{'dis-n': !toggleFlag}">
     <ul class="limitedMenuBox_menu">
         <li *ngFor="let menuItem of menu;" (click)="setToggleMenu(false)">
-            <a href="{{menuItem.link}}">{{menuItem.title}}</a>
+            <a [routerLink]="[menuItem.link]">{{menuItem.title}}</a>
         </li>
     </ul>
 </div>

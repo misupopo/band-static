@@ -6,7 +6,7 @@
                 <div *ngFor="let releaseList of releaseListData;" class="discographyBox">
                     <ul class="discographyBox_listBox">
                         <li class="discographyBox_listBox_list">
-                            <a href="/#/pages/discography/detail/{{releaseList._id}}">
+                            <a [routerLink]="['/pages/discography/detail/' + releaseList._id]">
                                 <div class="discographyBox_listBox_image">
                                     <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
                                 </div>
@@ -21,7 +21,7 @@
                 <div *ngFor="let releaseList of releaseSingleData;" class="discographyBox">
                     <ul class="discographyBox_listBox">
                         <li class="discographyBox_listBox_list">
-                            <a href="/#/pages/discography/detail/{{releaseList._id}}">
+                            <a [routerLink]="['/pages/discography/detail/' + releaseList._id]">
                                 <div class="discographyBox_listBox_image">
                                     <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
                                 </div>
@@ -36,7 +36,7 @@
                 <div *ngFor="let releaseList of releaseMvData;" class="discographyBox">
                     <ul class="discographyBox_listBox">
                         <li class="discographyBox_listBox_list">
-                            <a href="/#/pages/discography/detail/{{releaseList._id}}">
+                            <a [routerLink]="['/pages/discography/detail/' + releaseList._id]">
                                 <div class="discographyBox_listBox_image">
                                     <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
                                 </div>

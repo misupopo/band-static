@@ -2,19 +2,19 @@
     "menuItem": [
         {
             "title": "News",
-            "link": "/#/pages/news"
+            "link": "/pages/news"
         },
         {
             "title": "Live",
-            "link": "/#/pages/live"
+            "link": "/pages/live"
         },
         {
             "title": "Schedule",
-            "link": "/#/pages/schedule"
+            "link": "/pages/schedule"
         },
         {
             "title": "Discography",
-            "link": "/#/pages/discography"
+            "link": "/pages/discography"
         }
     ]
 }
