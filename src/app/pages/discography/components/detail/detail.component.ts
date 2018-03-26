@@ -42,7 +42,7 @@ export class DetailComponent {
             this.detailData.enter_time = this.dateManager.convertTime(new Date(this.detailData.enter_time));
             this.detailData.start_time = this.dateManager.convertTime(new Date(this.detailData.start_time));
 
-            this.shareUrl = '/discography/detail/' + this.detailData._id;
+            this.shareUrl = '/pages/discography/detail/' + this.detailData._id;
         },
         error => {
         });
