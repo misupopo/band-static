@@ -42,6 +42,13 @@ export class DetailComponent {
             this.detailData.enter_time = this.dateManager.convertTime(new Date(this.detailData.enter_time));
             this.detailData.start_time = this.dateManager.convertTime(new Date(this.detailData.start_time));
 
+            this.detailData.disc_number = this.detailData.disc_number.map((data) => {
+                if (data === 'CD') {
+                    return 'SINGLE';
+                }
+            });
+
+
             this.shareUrl = '/pages/discography/detail/' + this.detailData._id;
         },
         error => {
