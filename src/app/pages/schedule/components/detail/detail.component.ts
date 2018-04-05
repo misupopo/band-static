@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DetailDataService } from './detail.service';
 import { ListModel } from './detail.model';
 import { DateManager } from "../../../../@theme/services";
+import { ToggleMenuState } from '../../../../@core/share/toggleMenu.state';
 
 @Component({
     selector: 'orb-liveDetail',
@@ -11,13 +12,20 @@ import { DateManager } from "../../../../@theme/services";
 })
 export class DetailComponent {
     public listData: any = {};
+    public limitedLayout: boolean = false;
     view: string = 'month';
     viewDate: Date = new Date();
     events: any;
 
     constructor(private dateManager: DateManager,
                 private detailDataService: DetailDataService,
-                private router: Router) {
+                private router: Router,
+                private toggleMenuState: ToggleMenuState) {
+
+        this.toggleMenuState.toggleMenuWidthLimitedStateData.subscribe((state: any) => {
+            this.limitedLayout = state;
+        });
+
         this.getListData({
             params: {
             },

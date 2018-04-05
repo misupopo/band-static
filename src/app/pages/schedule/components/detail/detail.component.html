@@ -1,6 +1,6 @@
 <orb-card title="Schedule">
     <div class="clearfix">
-        <div class="tabBox calendarNavBox fl-l clearfix mb-20">
+        <div [ngClass]="{'fl-l': limitedLayout === false}" class="tabBox calendarNavBox clearfix mb-20">
             <div class="tabset">
                 <ul class="calendarNavBox_buttonBox">
                     <li [ngClass]="{'active': view === 'month'}">
