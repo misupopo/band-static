@@ -1,0 +1,40 @@
+{
+    "downloadItem": [
+        {
+            "name": "spotify",
+            "link": "https://www.spotify.com/jp/"
+        },
+        {
+            "name": "otoraku",
+            "link": "http://otoraku.jp/"
+        },
+        {
+            "name": "mysound",
+            "link": "http://mysound.jp/"
+        },
+        {
+            "name": "utapass",
+            "link": "http://au.utapass.jp/"
+        },
+        {
+            "name": "awa",
+            "link": "https://awa.fm/"
+        },
+        {
+            "name": "usen",
+            "link": "http://smart.usen.com/"
+        },
+        {
+            "name": "hmv",
+            "link": "http://www.hmv.co.jp/usen/"
+        },
+        {
+            "name": "rakuten",
+            "link": "https://music.rakuten.co.jp/"
+        },
+        {
+            "name": "deezer",
+            "link": "http://www.deezer.com/ja/offers/hifi"
+        }
+    ]
+}

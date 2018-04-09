@@ -5,6 +5,7 @@ import { DetailDataService } from "./detail.service";
 import { DetailModel } from "./detail.model";
 import { ShareButtons } from '@ngx-share/core';
 import { RequestConfigService } from '../../../../@core/data/request.service';
+import { downloadItem } from '../../../../../assets/config/download.json';
 
 @Component({
     selector: 'orb-detail',
@@ -17,6 +18,8 @@ export class DetailComponent {
     public detailId: string;
     public webSiteUrl: string;
     public shareUrl: string;
+    public downloadList: any;
+    public downloadItem: any = downloadItem;
 
     constructor(private dateManager: DateManager,
                 private distDataService: DetailDataService,
@@ -48,8 +51,14 @@ export class DetailComponent {
                 }
             });
 
-
             this.shareUrl = '/pages/discography/detail/' + this.detailData._id;
+
+            this.downloadList = Object.keys(this.detailData.download || {}).map((key) => {
+                return {
+                    name: key,
+                    value: this.detailData.download[key]
+                };
+            });
         },
         error => {
         });

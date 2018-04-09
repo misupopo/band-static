@@ -29,6 +29,21 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="discographyDetailBox_contentBox_downloadBox">
+                        <div>
+                            <div class="discographyDetailBox_contentBox_downloadBox_title">ダウンロード</div>
+                        </div>
+                        <div class="discographyDetailBox_contentBox_downloadBox_list" *ngFor="let download of downloadList;">
+                            <a href="{{download.value}}" target="_blank">
+                                <img src="assets/img/download/{{download.name}}.png">
+                            </a>
+                        </div>
+                        <div class="discographyDetailBox_contentBox_downloadBox_list" *ngFor="let item of downloadItem;">
+                            <a href="{{item.link}}" target="_blank">
+                                <img src="assets/img/download/{{item.name}}.png">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

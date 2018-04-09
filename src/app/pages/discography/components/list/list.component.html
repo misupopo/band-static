@@ -3,9 +3,9 @@
         <tabset class="tabBox clearfix"
                 (onSelect)="tabSelect($event)">
             <tab title="ALL">
-                <div *ngFor="let releaseList of releaseListData;" class="discographyBox">
-                    <ul class="discographyBox_listBox">
-                        <li class="discographyBox_listBox_list">
+                <div class="discographyBox">
+                    <ul class="discographyBox_listBox clearfix">
+                        <li class="discographyBox_listBox_list" *ngFor="let releaseList of releaseListData;">
                             <a [routerLink]="['/pages/discography/detail/' + releaseList._id]">
                                 <div class="discographyBox_listBox_image">
                                     <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
@@ -18,9 +18,9 @@
                 </div>
             </tab>
             <tab title="SINGLE">
-                <div *ngFor="let releaseList of releaseSingleData;" class="discographyBox">
-                    <ul class="discographyBox_listBox">
-                        <li class="discographyBox_listBox_list">
+                <div class="discographyBox">
+                    <ul class="discographyBox_listBox clearfix">
+                        <li class="discographyBox_listBox_list" *ngFor="let releaseList of releaseSingleData;">
                             <a [routerLink]="['/pages/discography/detail/' + releaseList._id]">
                                 <div class="discographyBox_listBox_image">
                                     <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
@@ -33,9 +33,9 @@
                 </div>
             </tab>
             <tab title="MV">
-                <div *ngFor="let releaseList of releaseMvData;" class="discographyBox">
-                    <ul class="discographyBox_listBox">
-                        <li class="discographyBox_listBox_list">
+                <div class="discographyBox">
+                    <ul class="discographyBox_listBox clearfix">
+                        <li class="discographyBox_listBox_list" *ngFor="let releaseList of releaseMvData;">
                             <a [routerLink]="['/pages/discography/detail/' + releaseList._id]">
                                 <div class="discographyBox_listBox_image">
                                     <img src="{{imageRequestUrl}}/images/{{releaseList.file_name}}">
