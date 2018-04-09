@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 import { DetailDataService } from './detail.service';
 import { ListModel } from './detail.model';
@@ -6,6 +6,7 @@ import { DateManager } from "../../../../@theme/services";
 import { ToggleMenuState } from '../../../../@core/share/toggleMenu.state';
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: 'orb-liveDetail',
     templateUrl: './detail.component.html',
     styleUrls: ['./detail.component.scss']
@@ -19,12 +20,7 @@ export class DetailComponent {
 
     constructor(private dateManager: DateManager,
                 private detailDataService: DetailDataService,
-                private router: Router,
-                private toggleMenuState: ToggleMenuState) {
-
-        this.toggleMenuState.toggleMenuWidthLimitedStateData.subscribe((state: any) => {
-            this.limitedLayout = state;
-        });
+                private router: Router) {
 
         this.getListData({
             params: {
