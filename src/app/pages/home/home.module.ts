@@ -5,13 +5,15 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { HomeRoutingModule, routedComponents } from './home-routing.module';
 import { IndexDataService } from './components/index/index.service';
 import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
+import { NgxCarouselModule } from 'ngx-carousel';
 
 @NgModule({
     imports: [
         ThemeModule,
         HttpClientModule,
         HomeRoutingModule,
-        NgxTwitterTimelineModule
+        NgxTwitterTimelineModule,
+        NgxCarouselModule
     ],
     declarations: [
         ...routedComponents,

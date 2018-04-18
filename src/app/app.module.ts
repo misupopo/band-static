@@ -10,6 +10,8 @@ import { ThemeModule } from './@theme/theme.module';
 import { CoreModule } from './@core/core.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingModule } from 'ngx-loading';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
 
 @NgModule({
     declarations: [
@@ -24,6 +26,7 @@ import { LoadingModule } from 'ngx-loading';
         CoreModule.forRoot(),
         NgxPaginationModule,
         LoadingModule,
+        NgxCarouselModule,
     ],
     bootstrap: [AppComponent],
     providers: [

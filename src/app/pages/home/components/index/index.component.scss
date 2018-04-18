@@ -18,5 +18,167 @@
     }
 }
 
+.carouselBox {
+    margin-bottom: 25px;
+}
 
+.carouselBox_itemBox {
+    margin-bottom: 8px;
+}
 
+$fade-speed: 1000ms;
+
+.carouselBox_release {
+    a {
+        display: -webkit-box;
+        display: -moz-box;
+        color: #fff !important;
+
+        &:hover {
+            color: #fff !important;
+
+            .carouselBox_release_detail {
+                text-shadow:
+                        0 0 30px rgba(0, 196, 241, 1),
+                        0 0 30px rgba(0, 196, 241, 1),
+                        0 0 30px rgba(0, 196, 241, 1),
+                        0 0 30px rgba(0, 196, 241, 1);
+            }
+
+            .carouselBox_release_imgBox img {
+                opacity: 0.8;
+                box-shadow:
+                        0 0 30px rgba(0, 196, 241, 1),
+                        0 0 30px rgba(0, 196, 241, 1),
+                        0 0 30px rgba(0, 196, 241, 1),
+                        0 0 30px rgba(0, 196, 241, 1);
+            }
+        }
+    }
+}
+
+.carouselBox_release_detail {
+    padding: 20px 15px 20px 20px;
+    //float: right;
+    transition: all $fade-speed 0s ease;
+    -webkit-box-flex: 20;
+    -moz-box-flex: 20;
+}
+
+.carouselBox_release_title {
+    margin-top: 30px;
+    margin-right: 53px;
+    margin-bottom: 21px;
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+.carouselBox_release_imgBox {
+    width: 300px;
+    margin-left: 20px;
+    padding: 10px;
+    //float: left;
+    -webkit-box-flex:1; -moz-box-flex:1;
+
+    img {
+        transition: all $fade-speed 0s ease;
+    }
+}
+
+.carouselBox_release_date {
+    margin-bottom: 14px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.carouselBox_release_detailButton {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.carouselBox_release_comment {
+    margin-bottom: 36px;
+    font-size: 1.4rem;
+}
+
+.carouselBox_release_detailButton {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+    align-items: center; /* 縦方向中央揃え */
+    -webkit-justify-content: flex-end; /* 横方向中央揃え（Safari用） */
+    justify-content: flex-end; /* 横方向中央揃え */
+
+    text-align: right;
+
+    span {
+        font-size: 1.3rem;
+        margin-right: 5px;
+    }
+
+    i {
+        font-size: 2rem;
+    }
+}
+
+.ngxcarouselPoint {
+    li {
+        margin: 0 5px !important;
+        background-color: #888888 !important;
+    }
+}
+
+.carousel_navigationLeft,
+.carousel_navigationRight {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 86%;
+    -webkit-appearance: none;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: all $fade-speed 0s ease;
+
+    i {
+        &:before {
+            font-weight: bold;
+            font-size: 3rem;
+        }
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.carousel_navigationRight {
+    right: 0;
+
+    i {
+        &:before {
+            display: inline-block;
+            margin-top: -2px;
+            margin-left: 3px;
+        }
+    }
+}
+
+.limitedSizeWidth {
+    .carouselBox_release {
+        a {
+            display: block;
+        }
+    }
+
+    .carouselBox_release_imgBox {
+        margin: auto;
+        float: none;
+    }
+
+    .carouselBox_release_detail {
+        float: none;
+    }
+
+}

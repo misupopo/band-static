@@ -8,6 +8,11 @@
     text-align: left;
 }
 
+.dis-box {
+    display: -webkit-box;
+    display: -moz-box;
+}
+
 .flex-right {
     display: flex;
     justify-content: flex-end !important;

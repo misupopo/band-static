@@ -1,3 +1,46 @@
+<div class="carouselBox" *ngIf="carouselData.length > 0">
+    <ngx-carousel
+            [inputs]="carouselOne">
+        <ngx-item *ngFor="let carousel of carouselData;" NgxCarouselItem>
+            <div class="carouselBox_itemBox" [ngSwitch]="carousel.type">
+                <div *ngSwitchCase="'banner'">
+                    <a [routerLink]="['/pages/' + carousel.link]">
+                        <img src="{{imageRequestUrl}}/images/{{carousel.file_name}}">
+                    </a>
+                </div>
+                <div class="carouselBox_release" *ngSwitchCase="'release'">
+                    <a [routerLink]="['/pages/' + carousel.link]"
+                       class="clearfix" href="#">
+                        <div class="carouselBox_release_imgBox">
+                            <img src="{{imageRequestUrl}}/images/{{carousel.file_name}}">
+                        </div>
+                        <div class="carouselBox_release_detail">
+                            <div class="carouselBox_release_title">
+                                {{carousel.title}}
+                            </div>
+                            <div class="carouselBox_release_date">
+                                {{carousel.date | date: 'd.M EEE'}} Release!
+                            </div>
+                            <div class="carouselBox_release_comment">
+                                {{carousel.detail}}
+                            </div>
+                            <div class="carouselBox_release_detailButton">
+                                <span>詳しくはこちら</span>
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </ngx-item>
+        <button NgxCarouselPrev class='carousel_navigationLeft leftRs'>
+            <i class="fa fa-angle-left"></i>
+        </button>
+        <button NgxCarouselNext class='carousel_navigationRight rightRs'>
+            <i class="fa fa-angle-right"></i>
+        </button>
+    </ngx-carousel>
+</div>
 <orb-card title="News">
     <div class="homeBox notice">
         <ul>
