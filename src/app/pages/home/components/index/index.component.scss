@@ -166,6 +166,12 @@ $fade-speed: 1000ms;
 }
 
 .limitedSizeWidth {
+    .carouselBox_release_title {
+        margin-top: 0;
+        margin-right: 0;
+        line-height: 4.5rem;
+    }
+
     .carouselBox_release {
         a {
             display: block;
