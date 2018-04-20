@@ -44,6 +44,10 @@
     font-weight: bold;
     height: 25px;
     padding: 0 8px 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.2);
 
     i {
         padding-right: 3px;
