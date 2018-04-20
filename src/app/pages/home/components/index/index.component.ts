@@ -26,7 +26,7 @@ export class IndexComponent {
         loop: true,
         custom: 'banner'
     };
-    public carouselData: any = null;
+    public carouselData: any = [];
     public imageRequestUrl: string;
 
     constructor(private dateManager: DateManager,
