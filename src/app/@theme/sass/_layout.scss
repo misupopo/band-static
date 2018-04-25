@@ -19,7 +19,7 @@ html, body {
 
 body {
     color: #fff;
-    @include bg-image('back_star.png');
+    //@include bg-image('back_star.png');
     background-repeat: repeat;
     //background-position-x: center;
     background-position-y: top;

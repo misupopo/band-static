@@ -11,9 +11,13 @@ import { ToggleMenuState } from './@core/share/toggleMenu.state';
 export class AppComponent {
     public loading = false;
     public screenWidth: number = 0;
+    public windowObject: any = window;
 
     constructor(private loadingSpinnerState: LoadingSpinnerState,
                 private toggleMenuState: ToggleMenuState) {
+
+        this.windowObject.particlesJS.load('particles-js', 'assets/config/particles.json', function() {
+        });
     }
 
     ngOnInit(): void {

@@ -27,7 +27,9 @@
                 "../node_modules/@ngx-share/button/styles/themes/default/default-theme.scss",
                 "styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+                "../node_modules/particles.js/particles.js"
+            ],
             "environmentSource": "environments/environment.ts",
             "environments": {
                 "dev": "environments/environment.ts",
