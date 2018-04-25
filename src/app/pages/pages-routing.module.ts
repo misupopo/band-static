@@ -17,6 +17,10 @@ const routes: Routes = [{
             loadChildren: './news/news.module#NewsModule',
         },
         {
+            path: 'info',
+            loadChildren: './info/info.module#InfoModule',
+        },
+        {
             path: 'live',
             loadChildren: './live/live.module#LiveModule',
         },

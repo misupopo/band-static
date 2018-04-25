@@ -18,7 +18,8 @@ export class ListComponent {
     public tabSelectData = [
         'news',
         'release',
-        'live'
+        'live',
+        'info'
     ];
     public tabState: string;
     public webSiteUrl: string;
