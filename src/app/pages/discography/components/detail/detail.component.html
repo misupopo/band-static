@@ -1,3 +1,10 @@
+<ng-template #content let-c="close">
+    <div class="popupBox" (click)="c()">
+        <div class="popupBox_image">
+            <img src="{{imageRequestUrl}}/images/{{detailData.file_name}}">
+        </div>
+    </div>
+</ng-template>
 <orb-card title="Discography">
     <div class="discographyDetailBox" *ngIf="detailData">
         <div class="discographyDetailBox_dateBox position-relative">
@@ -9,7 +16,7 @@
                 {{detailData.title}}
             </div>
             <div class="discographyDetailBox_contentBox clearfix">
-                <div class="discographyDetailBox_contentBox_image">
+                <div class="discographyDetailBox_contentBox_image" (click)="open(content)">
                     <img src="{{imageRequestUrl}}/images/{{detailData.file_name}}">
                 </div>
                 <div class="discographyDetailBox_contentBox_songListBox">

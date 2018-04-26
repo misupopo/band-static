@@ -6,6 +6,7 @@ import { DetailModel } from "./detail.model";
 import { ShareButtons } from '@ngx-share/core';
 import { RequestConfigService } from '../../../../@core/data/request.service';
 import { downloadItem } from '../../../../../assets/config/download.json';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'orb-detail',
@@ -25,7 +26,8 @@ export class DetailComponent {
                 private distDataService: DetailDataService,
                 private activatedRoute: ActivatedRoute,
                 private requestConfigService: RequestConfigService,
-                public share: ShareButtons) {
+                private modalService: NgbModal,
+                public share: ShareButtons,) {
         this.activatedRoute.params.subscribe((params: Params) => {
             this.detailId = params.id;
         });
@@ -62,6 +64,10 @@ export class DetailComponent {
         },
         error => {
         });
+    }
+
+    public open(content) {
+        this.modalService.open(content);
     }
 
     private getListData(detailModel: DetailModel) {
