@@ -47,7 +47,7 @@
                                         会場 : {{newsList.venue}}<br />
                                         開場 : {{newsList.enter_time | date: 'HH:mm'}}<br />
                                         開演 : {{newsList.start_time | date: 'HH:mm'}}<br />
-                                        出演 : {{newsList.performer}}<br />
+                                        出演 : <span *ngFor="let performer of newsList.performer; let i = index">{{performer}}<span [hidden]="i === (newsList.performer.length - 1)">, </span></span><br />
                                     </div>
                                 </div>
                                 <div class="text-right mb-20">
