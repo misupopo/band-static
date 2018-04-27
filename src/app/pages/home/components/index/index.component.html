@@ -63,6 +63,11 @@
                                 <span class="notice-list_text">{{newsList.article_title}}</span>
                             </a>
                         </div>
+                        <div *ngSwitchCase="'info'">
+                            <a [routerLink]="['/pages/info/detail/' + newsList._id]">
+                                <span class="notice-list_text">{{newsList.article_title}}</span>
+                            </a>
+                        </div>
                     </div>
                 </span>
             </li>
