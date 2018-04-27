@@ -26,7 +26,14 @@ body {
 }
 
 .wrapper {
+    display: block;
     height: 100%;
+}
+
+.toggleOpen {
+    .wrapper {
+        display: none;
+    }
 }
 
 .container {

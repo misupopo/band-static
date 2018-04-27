@@ -13,6 +13,7 @@ import { LoadingModule } from 'ngx-loading';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 
+
 @NgModule({
     declarations: [
         AppComponent

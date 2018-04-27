@@ -13,7 +13,7 @@ const PAGES_COMPONENTS = [
         ThemeModule,
     ],
     declarations: [
-        PAGES_COMPONENTS
+        PAGES_COMPONENTS,
     ],
 })
 export class PagesModule {

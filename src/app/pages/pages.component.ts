@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ToggleMenuState } from '../@core/share/toggleMenu.state';
 
 @Component({
     selector: 'pages',
     template: `
-        <div [ngClass]="{'dis-n': toggleFlag}" class="wrapper">
+        <div class="wrapper">
             <div class="container">
                 <router-outlet></router-outlet>
             </div>
