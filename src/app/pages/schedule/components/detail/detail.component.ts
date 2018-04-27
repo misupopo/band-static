@@ -43,7 +43,8 @@ export class DetailComponent {
         return calender.map((data) => {
             const colorData = {
                 release: '#34dfa5',
-                live: '#ff4383'
+                live: '#ff4383',
+                info: '#009dff',
             };
 
             return {
@@ -71,6 +72,9 @@ export class DetailComponent {
                 break;
             case 'live':
                 this.router.navigate([`/pages/live/detail/${data._id}`]);
+                break;
+            case 'info':
+                this.router.navigate([`/pages/info/detail/${data._id}`]);
                 break;
             default:
                 break;
