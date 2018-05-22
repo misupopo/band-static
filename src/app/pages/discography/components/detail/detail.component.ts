@@ -7,6 +7,7 @@ import { ShareButtons } from '@ngx-share/core';
 import { RequestConfigService } from '../../../../@core/data/request.service';
 import { downloadItem } from '../../../../../assets/config/download.json';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoadingSpinnerState } from '../../../../@core/share/loadingSpinner.state';
 
 @Component({
     selector: 'orb-detail',
@@ -27,7 +28,8 @@ export class DetailComponent {
                 private activatedRoute: ActivatedRoute,
                 private requestConfigService: RequestConfigService,
                 private modalService: NgbModal,
-                public share: ShareButtons,) {
+                public share: ShareButtons,
+                private loadingSpinnerState: LoadingSpinnerState) {
         this.activatedRoute.params.subscribe((params: Params) => {
             this.detailId = params.id;
         });
@@ -63,6 +65,7 @@ export class DetailComponent {
             });
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
     }
 

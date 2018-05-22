@@ -5,6 +5,7 @@ import { ListDataService } from "./list.service";
 import { ListModel } from "./list.model";
 import { ShareButtons } from '@ngx-share/core';
 import { RequestConfigService } from "../../../../@core/data/request.service";
+import { LoadingSpinnerState } from '../../../../@core/share/loadingSpinner.state';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -28,7 +29,8 @@ export class ListComponent {
                 private listDataService: ListDataService,
                 private activatedRoute: ActivatedRoute,
                 private requestConfigService: RequestConfigService,
-                public share: ShareButtons) {
+                public share: ShareButtons,
+                private loadingSpinnerState: LoadingSpinnerState) {
         this.tabState = 'news';
 
         this.webSiteUrl = this.requestConfigService.getRequestWebSiteUrl();
@@ -41,6 +43,7 @@ export class ListComponent {
             this.newsListData = this.dateManager.allListConvert(response.result);
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
     }
 
@@ -53,6 +56,7 @@ export class ListComponent {
             this.newsListData = this.dateManager.allListConvert(response.result);
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
     }
 

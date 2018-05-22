@@ -1,9 +1,10 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { DetailDataService } from './detail.service';
 import { ListModel } from './detail.model';
 import { DateManager } from "../../../../@theme/services";
 import { ToggleMenuState } from '../../../../@core/share/toggleMenu.state';
+import { LoadingSpinnerState } from '../../../../@core/share/loadingSpinner.state';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -20,7 +21,8 @@ export class DetailComponent {
 
     constructor(private dateManager: DateManager,
                 private detailDataService: DetailDataService,
-                private router: Router) {
+                private router: Router,
+                private loadingSpinnerState: LoadingSpinnerState) {
 
         this.getListData({
             params: {
@@ -31,6 +33,7 @@ export class DetailComponent {
             this.events = this.eventInsert(this.listData);
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
     }
 

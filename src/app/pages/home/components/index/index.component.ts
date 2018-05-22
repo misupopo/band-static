@@ -4,6 +4,7 @@ import { NewsModel } from './index.model';
 import { DateManager } from "../../../../@theme/services";
 import { NgxCarousel } from 'ngx-carousel';
 import { RequestConfigService } from "../../../../@core/data/request.service";
+import { LoadingSpinnerState } from '../../../../@core/share/loadingSpinner.state';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -31,7 +32,8 @@ export class IndexComponent {
 
     constructor(private dateManager: DateManager,
                 private indexDataService: IndexDataService,
-                private requestConfigService: RequestConfigService) {
+                private requestConfigService: RequestConfigService,
+                private loadingSpinnerState: LoadingSpinnerState) {
 
         this.imageRequestUrl = this.requestConfigService.getRequestUrl();
 
@@ -46,6 +48,7 @@ export class IndexComponent {
             });
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
 
         this.getListData({
@@ -60,6 +63,7 @@ export class IndexComponent {
             });
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
 
         this.getListData({
@@ -70,6 +74,7 @@ export class IndexComponent {
             this.carouselData = response.result;
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
     }
 

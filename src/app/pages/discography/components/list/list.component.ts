@@ -4,6 +4,7 @@ import { DateManager } from "../../../../@theme/services";
 import { ListDataService } from "./list.service";
 import { ListModel } from "./list.model";
 import { RequestConfigService } from '../../../../@core/data/request.service';
+import { LoadingSpinnerState } from '../../../../@core/share/loadingSpinner.state';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -20,7 +21,8 @@ export class ListComponent {
     constructor(private dateManager: DateManager,
                 private listDataService: ListDataService,
                 private activatedRoute: ActivatedRoute,
-                private requestConfigService: RequestConfigService) {
+                private requestConfigService: RequestConfigService,
+                private loadingSpinnerState: LoadingSpinnerState) {
 
         this.imageRequestUrl = this.requestConfigService.getRequestUrl();
 
@@ -38,6 +40,7 @@ export class ListComponent {
             });
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
     }
 

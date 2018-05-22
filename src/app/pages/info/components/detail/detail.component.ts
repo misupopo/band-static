@@ -5,6 +5,7 @@ import { DetailModel } from './detail.model';
 import { DateManager } from "../../../../@theme/services";
 import { ShareButtons } from '@ngx-share/core';
 import { RequestConfigService } from '../../../../@core/data/request.service';
+import { LoadingSpinnerState } from '../../../../@core/share/loadingSpinner.state';
 
 @Component({
     selector: 'orb-infoDetail',
@@ -23,7 +24,8 @@ export class DetailComponent {
                 private activatedRoute: ActivatedRoute,
                 public share: ShareButtons,
                 private router: Router,
-                private requestConfigService: RequestConfigService) {
+                private requestConfigService: RequestConfigService,
+                private loadingSpinnerState: LoadingSpinnerState) {
         this.activatedRoute.params.subscribe((params: Params) => {
             this.detailId = params.id;
         });
@@ -44,6 +46,7 @@ export class DetailComponent {
             this.shareUrl = '/pages/info/detail/' + this.detailData._id;
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
     }
 

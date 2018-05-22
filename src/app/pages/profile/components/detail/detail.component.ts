@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { DetailDataService } from './detail.service';
 import { DetailModel } from './detail.model';
 import { DateManager } from "../../../../@theme/services";
+import { LoadingSpinnerState } from '../../../../@core/share/loadingSpinner.state';
 
 @Component({
     selector: 'orb-liveDetail',
@@ -15,7 +16,8 @@ export class DetailComponent {
 
     constructor(private dateManager: DateManager,
                 private detailDataService: DetailDataService,
-                private activatedRoute: ActivatedRoute) {
+                private activatedRoute: ActivatedRoute,
+                private loadingSpinnerState: LoadingSpinnerState) {
         this.activatedRoute.params.subscribe((params: Params) => {
             this.detailId = params.id;
         });
@@ -29,6 +31,7 @@ export class DetailComponent {
             this.detailData = response.result;
         },
         error => {
+            this.loadingSpinnerState.setLoadingSpinnerState(false);
         });
     }
 
