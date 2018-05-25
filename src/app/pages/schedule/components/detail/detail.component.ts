@@ -50,13 +50,15 @@ export class DetailComponent {
                 info: '#009dff',
             };
 
+            const renderData = data.news_type === 'live' ? data.enter_time : data.date;
+
             return {
                 title: data.article_title,
                 color: {
                     primary: colorData[data.news_type]
                 },
-                start: new Date(data.date),
-                end: new Date(data.date),
+                start: new Date(renderData),
+                end: new Date(renderData),
                 data: data
             };
         });
